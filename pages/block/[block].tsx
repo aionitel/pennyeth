@@ -7,7 +7,25 @@ import ReactTooltip from 'react-tooltip';
 import Search from '../../components/explorer/Search';
 import Link from 'next/link';
 
-const Block: NextPage = ({ block, }: any) => {
+interface Block {
+  type: string;
+  ticker: string;
+  hash: string;
+  height: number;
+  nonce: number;
+  size: number;
+  time: string;
+  depth: number;
+  txs: string[];
+  prevBlock: string;
+  merkleRoot: string;
+}
+
+interface BlockPageProps {
+  block: Block
+}
+
+const Block: NextPage<BlockPageProps> = ({ block }) => {
   return (
     <div>
       <Head>
@@ -15,7 +33,7 @@ const Block: NextPage = ({ block, }: any) => {
           block.height === 0 ? <title>PennyETH • Genesis Block</title> : <title>PennyETH • Block {block.height}</title>
         }
       </Head>
-      <div className='ml-14 text-medGray h-screen'>
+      <div className='ml-14 text-medGray'>
         <div className='mt-8 text-black'><Search /></div>
         <div className='flex-row'>
           <span className='flex'>
@@ -77,6 +95,13 @@ const Block: NextPage = ({ block, }: any) => {
             <h1>All transactions included in this block.</h1>
           </ReactTooltip>
         </div>
+        {
+          block.txs.map(item => (
+            <Link href={`/tx/${item}`} passHref key=''>
+              <h1 className='my-4 text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline'>{item}</h1>
+            </Link>
+          ))
+        }
         </div>
       </div>
     </div>
