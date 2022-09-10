@@ -52,7 +52,7 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
           <AssetHeader asset={asset} />
         </div>
         {
-          allowedChart.includes(asset.ticker) ? <YearChart data={weeklyAsset} /> : null
+          allowedChart.includes(asset.ticker) ? <YearChart data={weeklyAsset} marginLeft={25} marginRight={0} /> : null
         }
       </div>
       <h1 className='text-white text-5xl'>title</h1>

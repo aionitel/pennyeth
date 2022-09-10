@@ -2,10 +2,12 @@ import { AreaChart, Area, CartesianGrid, YAxis, XAxis, Tooltip, ResponsiveContai
 import { getChartHeight, getChartWidth } from '../../data/utils/getDimensions';
 
 interface HomeChartProps {
-  data: any[],
+  data: any[];
+  marginLeft: number;
+  marginRight: number;
 }
 
-const YearChart: React.FC<HomeChartProps> = ({ data }) => {
+const YearChart: React.FC<HomeChartProps> = ({ data, marginLeft, marginRight }) => {
  return (
     <ResponsiveContainer
       width={getChartWidth()}
@@ -13,6 +15,7 @@ const YearChart: React.FC<HomeChartProps> = ({ data }) => {
     >
       <AreaChart
         data={data}
+        margin={{ left: marginLeft, right: marginRight }}
       >
         <defs>
           <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">

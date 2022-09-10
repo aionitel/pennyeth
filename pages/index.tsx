@@ -42,7 +42,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className='lg:flex lg:mt-4 mt-10'>
-            <HomeChart data={weeklyBtc} />
+            <HomeChart data={weeklyBtc} marginLeft={30} marginRight={10} />
             <div className='flex-row hidden lg:inline'>
             </div>
           </div>
