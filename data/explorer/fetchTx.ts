@@ -1,30 +1,15 @@
 import axios from 'axios'
 
-interface TxIn {
-  prevHash: string;
-  outIdx: number;
-  outValue: number; // in satoshis
-  script: string;
-  sequence: string;
-  addresses: string[];
-  scriptType: string;
-}
-
-interface TxOut {
-  value: number; // in satoshis
-  script: string;
-  addresses: string[];
-  scriptType: string;
-}
-
 interface Tx {
   type: string;
   ticker: string;
   hash: string;
-  vin: number;
-  vout: number;
-  inputs: TxIn[],
-  outputs: TxOut[]
+  fees: number,
+  inputs: any;
+  outputs: any;
+  dateReceived: number;
+  dateConfirmed: number;
+  confirmations: string;
 }
 
 const fetchTx = async (ticker: string, txId: string) => {
@@ -36,10 +21,12 @@ const fetchTx = async (ticker: string, txId: string) => {
     type: "Transaction",
     ticker,
     hash: res.hash,
-    vin: res.vin_sz,
-    vout: res.vout_sz,
+    fees: res.fees,
     inputs: res.inputs,
-    outputs: res.outputs
+    outputs: res.outputs,
+    dateReceived: res.received,
+    dateConfirmed: res.confirmed,
+    confirmations: res.confirmations,
   }
 
   return tx;
