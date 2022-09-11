@@ -18,7 +18,10 @@ const Query: NextPage = ({ data }: any) => {
       </Head>
       <div className='m-10 h-screen'>
         <Search />
-        <h1 className='text-white text-center my-5 text-2xl'>Your search for {query.query} yielded {data.length as string} result(s)</h1>
+        {
+          query.query.length < 20 ? <h1 className='text-white text-center my-5 text-2xl'>Your search for {query.query} yielded {data.length as string} result(s)</h1>
+          : <h1 className='text-white text-center my-5 text-2xl'>Your search for {query.query.slice(0, 10)}... yielded {data.length as string} result(s)</h1>
+        }
         {
           data.map(item => (
             <div key='' className='my-5'>

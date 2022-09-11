@@ -11,7 +11,8 @@ import { slide as Menu } from 'react-burger-menu'
 var styles ={
   bmItemList: {
     color: 'black',
-    padding: 0.1
+    padding: 0.1,
+    backgroundColor: 'black'
   },
 }
 
@@ -24,7 +25,7 @@ const MobileNavModal: React.FC = () => {
       <Menu isOpen={modalOpen} styles={ styles } left width={ 250 } onOpen={() => setModalOpen(true)} onClose={() => setModalOpen(false)}>
         {
           NavBarItemsData.map(item => (
-            <MobileNavItem title={item.title} path={item.path} Icon={item.icon} key=''/>
+            <MobileNavItem title={item.title} path={item.path} Icon={item.icon} key='' />
           ))
         }
       </Menu>
