@@ -14,7 +14,7 @@ const Result: React.FC = ({ data }: any) => {
     }}
       passHref
     >
-      <div className='flex text-white border p-5 hover:cursor-pointer hover:bg-almostBlack transition-all duration-300'>
+      <div className='flex text-white border p-5 hover:cursor-pointer hover:bg-almostBlack transition-all duration-300 w-screen lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl'>
         {
           data.type === 'Block' ? <SiHiveBlockchain className='text-3xl' /> : null
         }

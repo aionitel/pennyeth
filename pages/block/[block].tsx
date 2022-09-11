@@ -27,13 +27,13 @@ interface BlockPageProps {
 
 const Block: NextPage<BlockPageProps> = ({ block }) => {
   return (
-    <div>
+    <div className='w-screen lg:max-w-screen-lg xl:max-w-screen-xl h-screen'>
       <Head>
         {
           block.height === 0 ? <title>PennyETH • Genesis Block</title> : <title>PennyETH • Block {block.height}</title>
         }
       </Head>
-      <div className='ml-14 text-medGray'>
+      <div className='2xl:ml-10 ml-5 text-medGray'>
         <div className='mt-8 text-black'><Search /></div>
         <div className='flex-row'>
           <span className='flex'>

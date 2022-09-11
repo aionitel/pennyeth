@@ -49,7 +49,7 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
   });
 
   return (
-    <div className='lg:pt-12 pt-4 h-screen'>
+    <div className='lg:pt-12 pt-4 h-screen w-screen lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl'>
       <Head>
         <title>PennyETH • {asset.name}</title>
       </Head>
@@ -62,7 +62,7 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
         }
       </div>
       <h1 className='text-white text-3xl ml-6 mb-5 text-center lg:text-left'>Price Info</h1>
-      <div className='text-white hidden lg:flex justify-between max-w-screen-lg w-screen ml-6 border-t-2 border-almostBlack text-center'>
+      <div className='text-white hidden lg:flex justify-between ml-6 border-t-2 border-almostBlack text-center'>
         <div className='py-5 border-r-2 ml-4 border-almostBlack pr-20'>
           <h2 className='text-chartGray'>Market Cap</h2>
           <h2>${formatter.format(asset.marketCap)}</h2>
@@ -97,6 +97,10 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
           <h2 className='text-chartGray'>All Time High</h2>
           <h2>${formatter.format(asset.allTimeHigh)}</h2>
         </div>
+      </div>
+      <div className='lg:max-w-screen-lg 2xl:max-w-screen-xl w-screen'>
+        <h1 className='text-white text-3xl ml-6 my-5'>Overview</h1>
+        <div dangerouslySetInnerHTML={{ __html: asset.overview }} className='text-chartGray ml-6' />
       </div>
     </div>
   )
