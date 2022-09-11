@@ -97,7 +97,7 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
         </div>
         {
           block.txs.map(item => (
-            <Link href={`/tx/${item}`} passHref key=''>
+            <Link href={`/tx/${item}?ticker=${block.ticker}`} passHref key=''>
               <h1 className='my-4 text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline'>{item}</h1>
             </Link>
           ))
