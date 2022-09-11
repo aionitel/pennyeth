@@ -3,6 +3,7 @@ import Head from "next/head";
 import fetchTx from "../../data/explorer/fetchTx";
 import TxHeader from "../../components/explorer/TxHeader";
 import TxSummary from "../../components/explorer/TxSummary";
+import Link from "next/link";
 
 interface Tx {
   type: string;
@@ -30,16 +31,18 @@ const Tx: NextPage<TxPageProps> = ({ tx }) => {
         <TxHeader tx={tx} />
         <TxSummary tx={tx} />
       <div className='mt-10 ml-8'>
-        <h1 className='text-chartGray text-3xl'>Details</h1>
+        <h1 className='text-white text-3xl'>Details</h1>
       </div>
-      <div className='flex-row text-white'>
+      <div className='flex-row text-chartGray'>
         <div className='flex justify-between border-b py-4'>
           <h1>Hash</h1>
           <h1>{tx.hash}</h1>
         </div>
         <div className='flex justify-between border-b py-4'>
           <h1>Included in block:</h1>
-          <h1>{tx.block}</h1>
+          <Link href={`/block/${tx.block}?ticker=${tx.ticker}`} passHref>
+            <h1 className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9]'>{tx.block}</h1>
+          </Link>
         </div>
         <div className='flex justify-between border-b py-4'>
           <h1>Confirmations</h1>

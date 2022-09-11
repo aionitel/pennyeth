@@ -22,9 +22,9 @@ const TxSummary: React.FC<TxSummaryProps> = ({ tx }) => {
   return (
     <>
     <div className='mt-10 ml-8'>
-      <b className='text-chartGray text-3xl'>Summary</b>
+      <b className='text-white text-3xl'>Summary</b>
     </div>
-      <div className='flex text-white my-6 ml-8'>
+      <div className='flex text-chartGray my-6 ml-8'>
         <h1 className='text-chartGray'>Fee</h1>
         <h1 className='ml-12 mr-1'>{tx.fees}</h1>
         <h1>{tx.ticker.toUpperCase()}</h1>
