@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 import { ImArrowRight } from 'react-icons/im'
 
@@ -33,9 +34,11 @@ const TxSummary: React.FC<TxSummaryProps> = ({ tx }) => {
         <div>
           {
               tx.inputs.hasOwnProperty("addresses") ? tx.inputs.map(item => (
-              <h1 key=''>
-                {item.addresses[0]}
-              </h1>
+              <Link href={`/address/${item.addresses[0]}?ticker=${tx.ticker}`} passHref>
+                <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9]'>
+                  {item.addresses[0]}
+                </h1>
+              </Link>
             ))
             : <div className="flex"><h1 className='text-green-400 mr-1'>COINBASE</h1><h1>(Newly Generated Coins)</h1></div>
           }
@@ -44,9 +47,11 @@ const TxSummary: React.FC<TxSummaryProps> = ({ tx }) => {
         <div>
           {
             tx.outputs.map(item => (
-              <h1 key=''>
-                {item.addresses[0]}
-              </h1>
+              <Link href={`/address/${item.addresses[0]}?ticker=${tx.ticker}`} passHref>
+                <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9]'>
+                  {item.addresses[0]}
+                </h1>
+              </Link>
             ))
           }
         </div>
