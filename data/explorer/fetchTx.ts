@@ -10,6 +10,7 @@ interface Tx {
   dateReceived: number;
   dateConfirmed: number;
   confirmations: string;
+  block: string;
 }
 
 const fetchTx = async (ticker: string, txId: string) => {
@@ -27,6 +28,7 @@ const fetchTx = async (ticker: string, txId: string) => {
     dateReceived: res.received,
     dateConfirmed: res.confirmed,
     confirmations: res.confirmations,
+    block: res.block_hash,
   }
 
   return tx;
