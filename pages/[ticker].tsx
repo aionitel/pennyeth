@@ -61,41 +61,41 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
           allowedChart.includes(asset.ticker) ? <YearChart data={weeklyAsset} marginLeft={25} marginRight={0} /> : null
         }
       </div>
-      <h1 className='text-white text-3xl ml-6 mb-5'>Price Info</h1>
-      <div className='text-white hidden lg:flex justify-between mr-20 max-w-screen-lg w-screen ml-6 border-t-2 border-almostBlack'>
-        <div className='py-5 border-r-2 border-almostBlack pr-12'>
-          <h2>Market Cap</h2>
-          <h2>{formatter.format(asset.marketCap)}</h2>
+      <h1 className='text-white text-3xl ml-6 mb-5 text-center lg:text-left'>Price Info</h1>
+      <div className='text-white hidden lg:flex justify-between max-w-screen-lg w-screen ml-6 border-t-2 border-almostBlack text-center'>
+        <div className='py-5 border-r-2 ml-4 border-almostBlack pr-20'>
+          <h2 className='text-chartGray'>Market Cap</h2>
+          <h2>${formatter.format(asset.marketCap)}</h2>
         </div>
-        <div className='py-5 border-r-2 border-almostBlack pr-12'>
-          <h2>Volume</h2>
-          <h2>{formatter.format(asset.volume)}</h2>
+        <div className='py-5 border-r-2 border-almostBlack pr-20'>
+          <h2 className='text-chartGray'>Volume</h2>
+          <h2>{formatter.format(asset.volume)} {asset.ticker}</h2>
         </div>
-        <div className='py-5 border-r-2 border-almostBlack pr-12'>
-          <h2>Stock to Flow</h2>
+        <div className='py-5 border-r-2 border-almostBlack pr-20'>
+          <h2 className='text-chartGray'>Stock to Flow</h2>
           <h2>{formatter.format(asset.stockToFlow)}</h2>
         </div>
-        <div>
-          <h2>All Time High</h2>
+        <div className='mt-5 pr-14'>
+          <h2 className='text-chartGray'>All Time High</h2>
           <h2>${formatter.format(asset.allTimeHigh)}</h2>
         </div>
       </div>
       <div className='text-white flex-col lg:hidden justify-between mr-20 text-center ml-20'>
-        <div className='py-10 border-b border-almostBlack'>
-          <h2>Market Cap</h2>
-          <h2>{asset.marketCap.toLocaleString()}</h2>
+        <div className='py-5 border-b border-almostBlack'>
+          <h2 className='text-chartGray'>Market Cap</h2>
+          <h2>{formatter.format(asset.marketCap)}</h2>
         </div>
-        <div className='py-10 border-b border-almostBlack'>
-          <h2>Volume</h2>
-          <h2>{asset.volume.toLocaleString()}</h2>
+        <div className='py-5 border-b border-almostBlack'>
+          <h2 className='text-chartGray'>Volume</h2>
+          <h2>{formatter.format(asset.volume)}</h2>
         </div>
-        <div className='py-10 border-b border-almostBlack'>
-          <h2>Stock to Flow</h2>
-          <h2>{asset.stockToFlow?.toLocaleString()}</h2>
+        <div className='py-5 border-b border-almostBlack'>
+          <h2 className='text-chartGray'>Stock to Flow</h2>
+          <h2>{formatter.format(asset.stockToFlow)}</h2>
         </div>
-        <div className='mt-20'>
-          <h2>All Time High</h2>
-          <h2>${asset.allTimeHigh.toFixed(2)}</h2>
+        <div className='mt-10'>
+          <h2 className='text-chartGray'>All Time High</h2>
+          <h2>${formatter.format(asset.allTimeHigh)}</h2>
         </div>
       </div>
     </div>

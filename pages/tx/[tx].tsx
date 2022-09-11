@@ -4,6 +4,7 @@ import fetchTx from "../../data/explorer/fetchTx";
 import TxHeader from "../../components/explorer/TxHeader";
 import TxSummary from "../../components/explorer/TxSummary";
 import Link from "next/link";
+import Search from "../../components/explorer/Search";
 
 interface Tx {
   type: string;
@@ -28,6 +29,7 @@ const Tx: NextPage<TxPageProps> = ({ tx }) => {
       <Head>
         <title>PennyETH • Transaction {tx.hash}</title>
       </Head>
+        <div className='mt-8 ml-8 text-black'><Search /></div>
         <TxHeader tx={tx} />
         <TxSummary tx={tx} />
       <div className='mt-10 ml-8'>
