@@ -27,7 +27,7 @@ interface BlockPageProps {
 
 const Block: NextPage<BlockPageProps> = ({ block }) => {
   return (
-    <div className='w-screen lg:max-w-screen-lg xl:max-w-screen-xl h-screen'>
+    <div className='w-screen lg:max-w-screen-lg xl:max-w-screen-xl h-full'>
       <Head>
         {
           block.height === 0 ? <title>PennyETH • Genesis Block</title> : <title>PennyETH • Block {block.height}</title>
@@ -48,10 +48,11 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
             </ReactTooltip>
           </span>
           <span className='lg:flex mb-4'>
-            <h1 className='inline mr-1'>This block was mined on {new Date(block.time).toDateString().slice(3, 15)} at {new Date(block.time).toLocaleTimeString()}.</h1>
+            <h1 className='inline mr-1'>This block was mined on {new Date(block.time).toDateString().slice(3, 15)} at {new Date(block.time).toLocaleTimeString()}. (By</h1>
             {
-              block.height === 0 ? block.ticker === 'btc' ? <h1 className='inline'>(By Satoshi Nakamoto!)</h1> : null : null
+              block.height === 0 ? block.ticker === 'btc' ? <a href='https://en.wikipedia.org/wiki/Satoshi_Nakamoto' rel="noopener noreferrer" target='_blank' className='inline text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline'>Satoshi Nakamoto</a> : null : null
             }
+            <h1>)</h1>
           </span>
         </div>
         <div className='flex-row text-center lg:text-left'>
