@@ -11,9 +11,9 @@ const Search: React.FC = () => {
   return (
     <form method='GET' className='flex' action={`/explorer/${query}`} >
       <input
-        className='w-screen lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl rounded-md pl-3 py-2'
+        className='w-screen lg:max-w-screen-lg xl:max-w-screen-xl rounded-md pl-3 py-2'
         type='text'
-        placeholder='Search Block / Address / Transaction (Bitcoin and Ethereum)'
+        placeholder='Search Block / Address / Transaction'
         onChange={handleChange}
         value={query}
         spellCheck={false}

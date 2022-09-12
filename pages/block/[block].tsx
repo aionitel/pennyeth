@@ -33,8 +33,8 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
           block.height === 0 ? <title>PennyETH • Genesis Block</title> : <title>PennyETH • Block {block.height}</title>
         }
       </Head>
-      <div className='2xl:ml-10 ml-5 text-medGray'>
-        <div className='mt-8 text-black'><Search /></div>
+      <div className='2xl:ml-10 ml-5 mr-2 lg:mr-0 text-medGray'>
+        <div className='mt-8 mr-2 lg:mr-0 text-black'><Search /></div>
         <div className='flex-row'>
           <span className='flex'>
             {
@@ -48,46 +48,51 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
               <h1>Block at height <br /> {block.height.toLocaleString()} in the blockchain.</h1>
             </ReactTooltip>
           </span>
-          <span className='flex mb-4'>
-            <h1>This block was mined on {new Date(block.time).toDateString().slice(3, 15)} at {new Date(block.time).toLocaleTimeString()}.</h1>
+          <span className='lg:flex mb-4'>
+            <h1 className='inline mr-1'>This block was mined on {new Date(block.time).toDateString().slice(3, 15)} at {new Date(block.time).toLocaleTimeString()}.</h1>
             {
-              block.height === 0 ? block.ticker === 'btc' ? <h1>(By Satoshi Nakamoto!)</h1> : null : null
+              block.height === 0 ? block.ticker === 'btc' ? <h1 className='inline'>(By Satoshi Nakamoto!)</h1> : null : null
             }
           </span>
         </div>
-        <div className='flex-row'>
-          <div className='flex justify-between border-b py-4'>
+        <div className='flex-row text-center lg:text-left'>
+          <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Hash</h1>
-            <h1>{block.hash}</h1>
+            <h1 className='hidden lg:block'>{block.hash}</h1>
+            <h1 className='block lg:hidden'>{block.hash.slice(0, 35)}...</h1>
           </div>
-          <div className='flex justify-between border-b py-4'>
+          <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Height</h1>
             <h1>{block.height}</h1>
           </div>
-          <div className='flex justify-between border-b py-4'>
+          <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Confirmations</h1>
             <h1>{block.depth + 1}</h1>
           </div>
-          <div className='flex justify-between border-b py-4'>
+          <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Nonce</h1>
             <h1>{block.nonce}</h1>
           </div>
-          <div className='flex justify-between border-b py-4'>
+          <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Merkle Root</h1>
-            <h1>{block.merkleRoot}</h1>
+            <h1 className='hidden lg:block'>{block.merkleRoot}</h1>
+            <h1 className='block lg:hidden'>{block.merkleRoot.slice(0, 35)}...</h1>
           </div>
-          <div className='flex justify-between border-b py-4'>
+          <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Size:</h1>
             <h1>{block.size}</h1>
           </div>
-          <div className='flex justify-between border-b py-4'>
+          <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Previous Block</h1>
             <Link href={`/block/${block.prevBlock}?ticker=${block.ticker}`} passHref>
-              <h1 className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-2'>{block.prevBlock}</h1>
+              <>
+                <h1 className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-2 hidden lg:block'>{block.prevBlock}</h1>
+                <h1 className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-2 block lg:hidden'>{block.prevBlock.slice(0, 35)}...</h1>
+              </>
             </Link>
           </div>
         </div>
-      <div className='my-8'>
+      <div className='my-8 hidden lg:block'>
         <div className='flex'>
           <h1 className='text-3xl text-white mb-2'>Block Transactions</h1>
           <BsFillInfoCircleFill data-tip={<h1></h1>} className='mt-3 mx-2 text-lightgray' />
