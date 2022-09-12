@@ -14,7 +14,6 @@ const fetchTx = async (ticker: string, txId: string) => {
     inputs: res.inputs,
     outputs: res.outputs,
     dateReceived: res.received,
-    dateConfirmed: res.confirmed,
     confirmations: res.confirmations,
     block: res.block_hash,
     size: res.size,

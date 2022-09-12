@@ -6,7 +6,6 @@ export interface Tx {
   inputs: any;
   outputs: any;
   dateReceived: string;
-  dateConfirmed: string;
   confirmations: string;
   block: string;
   size: number;

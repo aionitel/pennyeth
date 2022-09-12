@@ -15,7 +15,7 @@ const Tx: NextPage<TxPageProps> = ({ tx }) => {
   return (
     <div className='w-screen lg:max-w-screen-lg xl:max-w-screen-xl h-screen'>
       <Head>
-        <title>PennyETH • Transaction {tx.hash}</title>
+        <title>PennyETH • Transaction {tx.ticker === 'eth' ? '0x' : null}{tx.hash}</title>
       </Head>
         <div className='mt-8 lg:ml-8 mx-4 text-black'><Search /></div>
         <TxHeader tx={tx} />
@@ -26,8 +26,8 @@ const Tx: NextPage<TxPageProps> = ({ tx }) => {
       <div className='flex-row text-chartGray lg:mx-0 lg:ml-8 mx-5'>
         <div className='flex justify-between border-b py-4'>
           <h1>Hash</h1>
-          <h1 className='hidden lg:block'>{tx.hash}</h1>
-          <h1 className='block lg:hidden'>{tx.hash.slice(0, 25)}...</h1>
+          <h1 className='hidden lg:block'>{tx.ticker === 'eth' ? '0x' : null}{tx.hash}</h1>
+          <h1 className='block lg:hidden'>{tx.ticker === 'eth' ? '0x' : null}{tx.hash.slice(0, 25)}...</h1>
         </div>
         <div className='flex justify-between border-b py-4'>
           <h1>Status</h1>
@@ -39,8 +39,8 @@ const Tx: NextPage<TxPageProps> = ({ tx }) => {
           <h1>Included in block:</h1>
           <Link href={`/block/${tx.block}?ticker=${tx.ticker}`} passHref>
             <div>
-              <h1 className='text-blue hidden lg:block hover:cursor-pointer hover:underline hover:opacity-[0.9]'>{tx.block}</h1>
-              <h1 className='text-blue block lg:hidden hover:cursor-pointer hover:underline hover:opacity-[0.9]'>{tx.block.slice(0, 15)}...</h1>
+              <h1 className='text-blue hidden lg:block hover:cursor-pointer hover:underline hover:opacity-[0.9]'>{tx.ticker === 'eth' ? '0x' : null}{tx.block}</h1>
+              <h1 className='text-blue block lg:hidden hover:cursor-pointer hover:underline hover:opacity-[0.9]'>{tx.ticker === 'eth' ? '0x' : null}{tx.block.slice(0, 15)}...</h1>
             </div>
           </Link>
         </div>

@@ -38,9 +38,8 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
         <div className='flex-row'>
           <span className='flex'>
             {
-              block.height === 0 ? block.ticker === 'btc' ? 
+              block.height === 0 ?
               <h1 className='text-3xl my-6 text-white'>Genesis Block</h1> 
-              : null 
               : <h1 className='text-3xl my-6 text-white'>Block {block.height}</h1>
             }
             <BsFillInfoCircleFill className='mt-8 mx-2 text-lightgray' data-tip={<h1></h1>} />
@@ -58,8 +57,8 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
         <div className='flex-row text-center lg:text-left'>
           <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Hash</h1>
-            <h1 className='hidden lg:block'>{block.hash}</h1>
-            <h1 className='block lg:hidden'>{block.hash.slice(0, 35)}...</h1>
+            <h1 className='hidden lg:block'>{block.ticker === 'eth' ? '0x' : null}{block.hash}</h1>
+            <h1 className='block lg:hidden'>{block.ticker === 'eth' ? '0x' : null}{block.hash.slice(0, 35)}...</h1>
           </div>
           <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Height</h1>
@@ -75,8 +74,8 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
           </div>
           <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Merkle Root</h1>
-            <h1 className='hidden lg:block'>{block.merkleRoot}</h1>
-            <h1 className='block lg:hidden'>{block.merkleRoot.slice(0, 35)}...</h1>
+            <h1 className='hidden lg:block'>{block.ticker === 'eth' ? '0x' : null}{block.merkleRoot}</h1>
+            <h1 className='block lg:hidden'>{block.ticker === 'eth' ? '0x' : null}{block.merkleRoot.slice(0, 35)}...</h1>
           </div>
           <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Size:</h1>
@@ -86,8 +85,8 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
             <h1>Previous Block</h1>
             <Link href={`/block/${block.prevBlock}?ticker=${block.ticker}`} passHref>
               <>
-                <h1 className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-2 hidden lg:block'>{block.prevBlock}</h1>
-                <h1 className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-2 block lg:hidden'>{block.prevBlock.slice(0, 35)}...</h1>
+                <h1 className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-2 hidden lg:inline'>{block.ticker === 'eth' ? '0x' : null}{block.prevBlock}</h1>
+                <h1 className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-2 block lg:hidden'>{block.ticker === 'eth' ? '0x' : null}{block.prevBlock.slice(0, 35)}...</h1>
               </>
             </Link>
           </div>
@@ -103,7 +102,7 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
         {
           block.txs.map(item => (
             <Link href={`/tx/${item}?ticker=${block.ticker}`} passHref key=''>
-              <h1 className='my-4 text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline'>{item}</h1>
+              <h1 className='my-4 text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline'>{block.ticker === 'eth' ? '0x' : null}{item}</h1>
             </Link>
           ))
         }
