@@ -49,7 +49,7 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
   });
 
   return (
-    <div className='lg:pt-12 pt-4 h-screen w-screen lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl'>
+    <div className='lg:pt-12 pt-4 h-screen w-screen lg:max-w-screen-lg xl:max-w-screen-xl'>
       <Head>
         <title>PennyETH • {asset.name}</title>
       </Head>

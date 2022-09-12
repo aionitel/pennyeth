@@ -10,10 +10,10 @@ const MobileNavBar: React.FC = () => { // mainly top of screen, with three bars,
         lg:hidden 
         flex 
         justify-between 
-        px-5 
+        px-2
         py-8
         h-30
-        bg-black border-b 
+        bg-black 
         border-lightgray 
         text-white
         text-4xl

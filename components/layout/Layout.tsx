@@ -2,7 +2,6 @@ import dynamic from 'next/dynamic'
 import React from 'react'
 import MobileNavBar from '../nav/mobile/MobileNavBar'
 import NavBar from '../nav/NavBar'
-import Footer from '../layout/Footer'
 
 const Layout: React.FC = ({ children }: any) => {
   return (
