@@ -1,18 +1,5 @@
 import axios from 'axios'
-
-interface Block {
-  type: string;
-  ticker: string;
-  hash: string;
-  height: number;
-  nonce: number;
-  size: number;
-  time: string;
-  depth: number;
-  txs: string[];
-  prevBlock: string;
-  merkleRoot: string;
-}
+import { Block } from '../utils/types';
 
 // For fetching data about certain block
 // ticker (btc or eth) and hash or height of block required

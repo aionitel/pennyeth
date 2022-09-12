@@ -1,15 +1,5 @@
 import axios from 'axios';
-
-interface Address {
-  type: string;
-  ticker: string;
-  address: string;
-  totalReceived: number;
-  totalSent: number;
-  balance: number,
-  n_txs: number;
-  txs: string[]; // list of tx hashes belonging to address
-}
+import { Address } from '../utils/types';
 
 const fetchAddr = async (ticker: string, addr: string) => {
   const url = `https://api.blockcypher.com/v1/${ticker}/main/addrs/${addr}`;

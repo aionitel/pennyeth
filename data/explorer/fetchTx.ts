@@ -1,18 +1,5 @@
 import axios from 'axios'
-
-interface Tx {
-  type: string;
-  ticker: string;
-  hash: string;
-  fees: number,
-  inputs: any;
-  outputs: any;
-  dateReceived: number;
-  dateConfirmed: number;
-  confirmations: string;
-  block: string;
-  size: number;
-}
+import { Tx } from '../utils/types';
 
 const fetchTx = async (ticker: string, txId: string) => {
   const url = `https://api.blockcypher.com/v1/${ticker}/main/txs/${txId}`;
@@ -31,6 +18,7 @@ const fetchTx = async (ticker: string, txId: string) => {
     confirmations: res.confirmations,
     block: res.block_hash,
     size: res.size,
+    total: res.total,
   }
 
   return tx;

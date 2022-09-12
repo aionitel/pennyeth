@@ -5,20 +5,7 @@ import TxHeader from "../../components/explorer/TxHeader";
 import TxSummary from "../../components/explorer/TxSummary";
 import Link from "next/link";
 import Search from "../../components/explorer/Search";
-
-interface Tx {
-  type: string;
-  ticker: string;
-  hash: string;
-  fees: number;
-  inputs: any;
-  outputs: any;
-  dateReceived: string;
-  dateConfirmed: string;
-  confirmations: string;
-  block: string;
-  size: number;
-}
+import { Tx } from '../../data/utils/types'
 
 interface TxPageProps {
   tx: Tx
@@ -36,7 +23,7 @@ const Tx: NextPage<TxPageProps> = ({ tx }) => {
       <div className='mt-10 lg:ml-8 ml-4'>
         <h1 className='text-white text-3xl'>Details</h1>
       </div>
-      <div className='flex-row text-chartGray mx-5 lg:mx-0 lg:ml-8 ml-0'>
+      <div className='flex-row text-chartGray lg:mx-0 lg:ml-8 mx-5'>
         <div className='flex justify-between border-b py-4'>
           <h1>Hash</h1>
           <h1 className='hidden lg:block'>{tx.hash}</h1>
