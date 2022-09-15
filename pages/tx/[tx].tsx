@@ -13,7 +13,7 @@ interface TxPageProps {
 
 const Tx: NextPage<TxPageProps> = ({ tx }) => {
   return (
-    <div className='w-screen lg:max-w-screen-lg xl:max-w-screen-xl'>
+    <div className='w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl'>
       <Head>
         <title>PennyETH • Transaction {tx.ticker === 'eth' ? '0x' : null}{tx.hash}</title>
       </Head>

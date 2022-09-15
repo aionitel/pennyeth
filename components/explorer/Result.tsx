@@ -14,7 +14,7 @@ const Result: React.FC = ({ data }: any) => {
     }}
       passHref
     >
-      <div className='flex text-white border p-5 hover:cursor-pointer hover:bg-almostBlack transition-all duration-300 w-screen lg:max-w-screen-lg xl:max-w-screen-xl'>
+      <div className='flex text-white border p-5 hover:cursor-pointer hover:bg-almostBlack transition-all duration-300 w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl'>
         {
           data.type === 'Block' ? <SiDatabricks className='text-2xl' /> : null
         }

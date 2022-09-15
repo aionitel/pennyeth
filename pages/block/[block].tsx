@@ -27,7 +27,7 @@ interface BlockPageProps {
 
 const Block: NextPage<BlockPageProps> = ({ block }) => {
   return (
-    <div className='w-screen lg:max-w-screen-lg xl:max-w-screen-xl h-full'>
+    <div className='w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl h-full'>
       <Head>
         {
           block.height === 0 ? <title>PennyETH • Genesis Block</title> : <title>PennyETH • Block {block.height}</title>
