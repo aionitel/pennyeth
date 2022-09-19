@@ -14,14 +14,14 @@ const TxSummary: React.FC<TxSummaryProps> = ({ tx }) => {
     <div className='mt-10 lg:ml-8 ml-4'>
       <b className='text-white text-3xl'>Summary</b>
     </div>
-      <div className='flex text-chartGray my-6 lg:ml-8 ml-4'>
+      <div className='flex text-chartGray my-5 lg:ml-8 ml-4'>
         <h1 className='text-chartGray'>Fee</h1>
         <h1 className='ml-12 mr-1'>{tx.fees / 100000000}</h1>
         <h1>{tx.ticker.toUpperCase()}</h1>
       </div>
-      <div className='flex text-chartGray'>
+      <div className='flex text-chartGray lg:ml-8 ml-4 mb-5'>
         <h1>Total</h1>
-        <h1>{tx.total / 100000000 } {tx.ticker.toUpperCase()}</h1>
+        <h1 className='ml-8'>{tx.total / 100000000 } {tx.ticker.toUpperCase()}</h1>
       </div>
       <div className='flex-row lg:flex justify-between text-white lg:ml-8 ml-4'>
         <div className='flex'>

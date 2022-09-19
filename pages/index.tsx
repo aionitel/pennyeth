@@ -46,7 +46,7 @@ const Home: NextPage = () => {
             <div className='flex-row hidden lg:inline'>
             </div>
           </div>
-          <div>
+          <div className='ml-7'>
             <DynamicCollection />
           </div>
           <div>

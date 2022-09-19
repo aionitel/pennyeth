@@ -49,19 +49,23 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
   });
 
   return (
-    <div className='lg:pt-12 pt-4 h-screen w-screen lg:max-w-screen-lg xl:max-w-screen-xl'>
+    <div className='lg:pt-12 pt-4 w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl' style={{ }}>
       <Head>
         <title>PennyETH • {asset.name}</title>
       </Head>
       <div className='text-white'>
-        <div className='lg:mb-10 mb-5'>
+        <div className='lg:mb-10 mb-10'>
           <AssetHeader asset={asset} />
         </div>
         {
           allowedChart.includes(asset.ticker) ? <YearChart data={weeklyAsset} marginLeft={25} marginRight={0} /> : null
         }
+        <div className='lg:max-w-screen-lg 2xl:max-w-screen-xl w-screen'>
+          <h1 className='text-white text-3xl ml-6 mb-5'>Overview</h1>
+        <div dangerouslySetInnerHTML={{ __html: asset.overview }} className='text-chartGray ml-6' />
       </div>
-      <h1 className='text-white text-3xl ml-6 mb-5 text-center lg:text-left'>Price Info</h1>
+      </div>
+      <h1 className='text-white text-3xl ml-6 my-7 text-center lg:text-left'>Price Info</h1>
       <div className='text-white hidden lg:flex justify-between ml-6 border-t-2 border-almostBlack text-center'>
         <div className='py-5 border-r-2 ml-4 border-almostBlack pr-20'>
           <h2 className='text-chartGray'>Market Cap</h2>
@@ -71,7 +75,7 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
           <h2 className='text-chartGray'>Volume</h2>
           <h2>{formatter.format(asset.volume)} {asset.ticker}</h2>
         </div>
-        <div className='py-5 border-r-2 border-almostBlack pr-20'>
+        <div className='py-5 border-r-2 border-almostBlack pr-20 hidden 2xl:block'>
           <h2 className='text-chartGray'>Stock to Flow</h2>
           <h2>{formatter.format(asset.stockToFlow)}</h2>
         </div>
@@ -98,9 +102,9 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
           <h2>${formatter.format(asset.allTimeHigh)}</h2>
         </div>
       </div>
-      <div className='lg:max-w-screen-lg 2xl:max-w-screen-xl w-screen'>
-        <h1 className='text-white text-3xl ml-6 my-5'>Overview</h1>
-        <div dangerouslySetInnerHTML={{ __html: asset.overview }} className='text-chartGray ml-6' />
+      <div>
+        <h1>Description</h1>
+        <div dangerouslySetInnerHTML={{ __html: asset.desc }} className='text-chartGray ml-6' />
       </div>
     </div>
   )
