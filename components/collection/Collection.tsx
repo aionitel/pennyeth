@@ -24,11 +24,7 @@ const Collection: React.FC = () => {
   const assets = allAssets.slice(0, 15)
 
   return (
-    <div className='flex-row text-md'
-      style={{
-        width: getChartWidth() - 35,
-      }}
-    >
+    <div className='flex-row text-md w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl'>
       <div className='flex justify-between text-sm my-4 ml-2 border-t pt-5 border-lightgray'>
         <h1 className='ml-4'>Name</h1>
         <h1 className='mr-8'>Price</h1>

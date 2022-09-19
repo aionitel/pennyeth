@@ -27,8 +27,8 @@ const Logo = () => {
     "ZEC",
     "DASH",
     "DOGE",
-    "ETC",
     "SHIB",
+    "ETC",
   ]
 
   useEffect(() => {

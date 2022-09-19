@@ -18,7 +18,7 @@ const ConnectWallet: React.FC = () => {
       >
         <div className='flex items-center'>
           <button 
-            className='bg-blue text-white text-center mt-5 py-5 px-7 hover:scale-105 transition-all rounded-2xl text-base ml-8 hover:rounded-none duration-200'
+            className='bg-blue text-white text-center mt-5 py-5 px-7 hover:scale-105 transition-all rounded-2xl text-base ml-8 hover:rounded-none duration-300'
             onClick={() => setModalOpen(true)}
           >
             <h1>Connect Wallet</h1>
