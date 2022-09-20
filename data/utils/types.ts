@@ -36,3 +36,17 @@ export interface Block {
   prevBlock: string;
   merkleRoot: string;
 }
+
+export interface NFT {
+  id: string;
+  address: string;
+  uri: string;
+  name: string;
+  image: string;
+  desc: string;
+  type: string;
+  hash: string;
+  block: string;
+  miner: string;
+  tx: string;
+}

@@ -1,17 +1,20 @@
 import Head from 'next/head'
 import { NextPage } from 'next'
+import NFTSearch from '../../components/nft/NFTSearch'
 
-const NFT: NextPage = () => {
+const NFTPage: NextPage = () => {
   return (
     <>
       <Head>
         <title>PennyETH  •  NFTs</title>
       </Head>
       <div className='h-screen bg-black text-white'>
-        NFT page
+        <div>
+          <NFTSearch />
+        </div>
       </div>
     </>
   )
 }
 
-export default NFT
+export default NFTPage;

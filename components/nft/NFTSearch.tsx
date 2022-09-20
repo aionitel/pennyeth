@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Search: React.FC = () => {
+const NFTSearch: React.FC = () => {
   const [query, setQuery] = useState<string>("");
 
   const handleChange = (e) => {
@@ -9,11 +9,11 @@ const Search: React.FC = () => {
   }
 
   return (
-    <form method='GET' className='flex' action={`/explorer/${query}`} >
+    <form method='GET' className='flex' action={`/nft/${query}`} >
       <input
         className='w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl rounded-md pl-3 py-2'
         type='text'
-        placeholder='Search Block / Address / Transaction'
+        placeholder='Search NFTs'
         onChange={handleChange}
         value={query}
         spellCheck={false}
@@ -23,4 +23,4 @@ const Search: React.FC = () => {
   )
 }
 
-export default Search;
+export default NFTSearch;
