@@ -6,7 +6,7 @@ const NFTPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>PennyETH  •  NFTs</title>
+        <title>PennyETH  •  Search NFTs</title>
       </Head>
       <div className='h-screen bg-black text-white'>
         <div>
