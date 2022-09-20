@@ -60,6 +60,14 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
         {
           allowedChart.includes(asset.ticker) ? <YearChart data={weeklyAsset} marginLeft={25} marginRight={0} /> : null
         }
+        {
+          asset.consensusAlgorithm ? 
+            <div className='flex ml-6 text-xl mb-6 mt-4'>
+              <h1 className='text-white mr-2'>Consensus Algorithm:</h1>
+              <h1 className='text-chartGray'>{asset.consensusAlgorithm}</h1>
+            </div>
+            : null
+        }
         <div className='lg:max-w-screen-lg 2xl:max-w-screen-xl w-screen'>
           <h1 className='text-white text-3xl ml-6 mb-5'>Overview</h1>
         <div dangerouslySetInnerHTML={{ __html: asset.overview }} className='text-chartGray ml-6' />
@@ -102,10 +110,14 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
           <h2>${formatter.format(asset.allTimeHigh)}</h2>
         </div>
       </div>
-      <div>
-        <h1>Description</h1>
-        <div dangerouslySetInnerHTML={{ __html: asset.desc }} className='text-chartGray ml-6' />
-      </div>
+      {
+        asset.desc ?
+          <div>
+            <h1 className='text-white text-3xl ml-6 my-5'>Detailed Info</h1>
+            <div dangerouslySetInnerHTML={{ __html: asset.desc }} className='text-chartGray ml-6' />
+        </div>
+        : null
+      }
     </div>
   )
 }
