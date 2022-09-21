@@ -2,7 +2,7 @@ import axios from 'axios'
 import { NFT } from '../utils/types';
 
 const fetchNFT = async (q: string) => {
-  const url = `https://deep-index.moralis.io/api/v2/nft/search?q=${q}?chain=eth&format=decimal&filter=global&limit=50`;
+  const url = `https://deep-index.moralis.io/api/v2/nft/search?q=${q}?chain=eth&format=decimal&filter=name%2Cdescription`;
 
   const { data: res } = await axios.get(url, { headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_NFT_KEY }});
 
@@ -22,11 +22,9 @@ const fetchNFT = async (q: string) => {
     }
   });
 
-  const nfts = unfiltered.filter(item => {
-    if (item.image.includes("https") && item.image.endsWith(".png")) {
-      return item
-    }
-  });
+  console.log(unfiltered)
+
+  const nfts = unfiltered.filter(item => item.image.includes("https"));
 
   return nfts;
 };
