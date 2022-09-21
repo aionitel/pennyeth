@@ -12,7 +12,7 @@ interface NavItemProps {
 // desktop navitem
 
 const NavItem: React.FC<NavItemProps> = ({ title, path, Icon }) => {
-  const [urlPathname, setUrlPathname] = useState<string>('/');
+  const [urlPathname, setUrlPathname] = useState<string>('');
 
   // set current pathname everytime user changes path (goes to new page), initially /
   useEffect(() => setUrlPathname(location.pathname), [location.pathname])
