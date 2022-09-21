@@ -34,7 +34,7 @@ const NavBarItemsData: NavBarItemsType[] = [
   },
   {
     title: 'NFTs',
-    path: '/nft',
+    path: '/nfts',
     icon: CgSmileMouthOpen
   },
   {

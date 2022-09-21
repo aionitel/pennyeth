@@ -9,11 +9,11 @@ const NFTSearch: React.FC = () => {
   }
 
   return (
-    <form method='GET' className='flex' action={`/nft/${query}`} >
+    <form method='GET' className='flex' action={`/nfts/${query}`} >
       <input
         className='w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl rounded-md pl-3 py-2'
         type='text'
-        placeholder='Search NFTs'
+        placeholder='Search NFTs (Name, Description)'
         onChange={handleChange}
         value={query}
         spellCheck={false}
