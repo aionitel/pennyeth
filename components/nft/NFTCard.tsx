@@ -5,8 +5,6 @@ interface NFTCardProps {
   nft: NFT;
 }
 
-const imageSize = 340;
-
 const NFTCard: React.FC<NFTCardProps> = ({ nft }) => {
   const [hover, setHover] = useState<boolean>(false);
 

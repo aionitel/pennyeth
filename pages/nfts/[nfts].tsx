@@ -25,7 +25,7 @@ const NFTS: React.FC<NFTSPageProps> = ({ nfts }) => {
       <div className='flex flex-wrap justify-center lg:justify-start lg:ml-7'>
         {
           nfts.reverse().map(item => (
-            <div key='' className='m-4'>
+            <div key='' className='lg:m-4'>
               <NFTCard nft={item} />
             </div>
           ))
