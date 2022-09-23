@@ -52,7 +52,12 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
   });
 
   return (
-    <div className='lg:pt-12 pt-4 w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl' style={{ }}>
+    <div 
+      className='lg:pt-12 pt-4 w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl'
+      style={{
+        height: allowedChart.includes(asset.ticker) ? null : '100vh'
+      }}
+    >
       <Head>
         <title>PennyETH • {asset.name}</title>
       </Head>

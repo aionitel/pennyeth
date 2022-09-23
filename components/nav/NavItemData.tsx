@@ -1,4 +1,3 @@
-import { BiNews } from 'react-icons/bi'
 import { RiHandCoinLine as HandIcon } from 'react-icons/ri'
 import { IconType } from 'react-icons'
 import { GiTwoCoins } from 'react-icons/gi' 
@@ -36,11 +35,6 @@ const NavBarItemsData: NavBarItemsType[] = [
     title: 'NFTs',
     path: '/nfts',
     icon: CgSmileMouthOpen
-  },
-  {
-    title: 'News',
-    path: '/news',
-    icon: BiNews
   },
   {
     title: 'About',
