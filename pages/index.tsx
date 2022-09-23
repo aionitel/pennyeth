@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import HomeChart from '../components/chart/YearChart'
 import dynamic from 'next/dynamic'
 import { useRecoilValue } from 'recoil'
-import { weeklyBtcAtom } from '../state/atoms'
+import { newsAtom, weeklyBtcAtom } from '../state/atoms'
 import MobileNewsCarousel from '../components/news/carousel/MobileNewsCarousel'
 
 // size of bitcoin logo in header 
@@ -19,6 +19,9 @@ const Home: NextPage = () => {
 
   // get weekly timeseries btc data
   const weeklyBtc = useRecoilValue(weeklyBtcAtom);
+
+  // get news data for NewsCarousel
+  const newsData = useRecoilValue(newsAtom);
 
   return (
     <>
@@ -52,7 +55,7 @@ const Home: NextPage = () => {
           <div>
             <h1 className='ml-7 my-6 text-2xl'>Latest Crypto News</h1>
             <MobileNewsCarousel />
-            <DynamicNewsCarousel />
+            <DynamicNewsCarousel newsData={newsData} />
           </div>
         </motion.div>
       </div>

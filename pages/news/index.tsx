@@ -1,12 +1,13 @@
 import { NextPage } from 'next'
 import React, { useEffect} from 'react'
 import Head from 'next/head'
+import NewsCarousel from '../../components/news/carousel/NewsCarousel'
 import { useRecoilValue } from 'recoil'
 import { newsAtom } from '../../state/atoms'
-import { NewsArticle } from '../../data/utils/types'
 
 const News: NextPage = () => {
-  const news: NewsArticle[] = useRecoilValue(newsAtom);
+  // get news data for NewsCarousel
+  const newsData = useRecoilValue(newsAtom);
 
   return (
     <>
@@ -14,15 +15,9 @@ const News: NextPage = () => {
         <title>PennyETH  •  News</title>
       </Head>
       <div className='h-screen'>
-        <div>
-          <h1>Latest News</h1>
-          <div>
-            {
-              news.map(item => (
-                <h1>{item.title}</h1>
-              ))
-            }
-          </div>
+        <div className='text-white'>
+          <h1>Latest Crypto News</h1>
+          <NewsCarousel newsData={newsData} />
         </div>
       </div>
     </>
