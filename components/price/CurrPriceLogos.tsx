@@ -1,10 +1,9 @@
-import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion';
 import { useRecoilValue } from 'recoil';
 import { allAssetsAtom } from '../../state/atoms';
 
-const btcLogoSize = 30;
+const logoSize = 30;
 
 const CurrPriceLogos: React.FC = () => {
   // get asset data from recoil
@@ -18,20 +17,19 @@ const CurrPriceLogos: React.FC = () => {
       transition={{ duration: 0.5 }}
     >
       <div className='flex'>
-        <Image 
+        <img
           src='https://i.imgur.com/wbZ6UVD.png' 
-          height={btcLogoSize}
-           width={btcLogoSize} 
-           alt='btc_logo'/>
+           width={logoSize} 
+           alt='btc_logo'
+        />
         <h1 className='mt-1 ml-2'>${assetData[0].price.toLocaleString().slice(0, 9)}</h1>
       </div>
       <div className='flex pl-4'>
-        <Image 
+        <img
           src='https://i.imgur.com/izIV4k9.png' 
-          height={20}
-          width={28} 
           alt='eth_logo'
-          />
+          style={{ width: logoSize - 5, height: logoSize - 4, marginTop: 3 }}
+        />
         <h1 className='mt-1 ml-2'>${assetData[1].price.toLocaleString().slice(0, 8)}</h1>
       </div>
     </motion.div>
