@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
 import { images } from '../../data/images/images'
-
-interface NewsProps {
-  title: string,
-  image: string,
-  date: string,
-  url: string,
-}
+import { NewsArticle } from '../../data/utils/types'
 
 const NewsImageSize = 350;
 
-const NewsCard: React.FC<NewsProps> = ({ title, image, date, url }) => {
+const NewsCard: React.FC<NewsArticle> = ({ title, image, date, url }) => {
   const [hover, setHover] = useState<boolean>(false);
   const [cover, setCover] = useState<string>("");
 

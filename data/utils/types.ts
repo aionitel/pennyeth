@@ -50,3 +50,10 @@ export interface NFT {
   miner: string;
   tx: string;
 }
+
+export interface NewsArticle {
+  title: string,
+  image: string,
+  date: string,
+  url: string,
+}
