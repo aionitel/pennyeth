@@ -1,15 +1,8 @@
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
+import { NewsArticle } from "../data/utils/types";
 
 const { persistAtom } = recoilPersist();
-
-interface NewsArticleProps {
-  title: string,
-  authors: string[],
-  image: string,
-  date: string,
-  url: string,
-}
 
 // curr user's eth address
 export const currUserAtom = atom({
@@ -27,7 +20,7 @@ export const navOpenAtom = atom({
 
 export const newsAtom = atom({
   key: "news",
-  default: [] as NewsArticleProps[],
+  default: [] as NewsArticle[],
   effects_UNSTABLE: [persistAtom]
 })
 

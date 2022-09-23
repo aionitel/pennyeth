@@ -1,13 +1,14 @@
 import React from 'react'
-import { useRecoilValue } from 'recoil'
-import { newsAtom } from '../../../state/atoms'
 import NewsCard from '../NewsCard'
 import Carousel from 'nuka-carousel/lib/carousel'
 import { AiOutlineLeftCircle, AiOutlineRightCircle } from 'react-icons/ai'
+import { NewsArticle } from '../../../data/utils/types'
 
-const MobileNewsCarousel: React.FC = () => {
-  const newsData = useRecoilValue(newsAtom);
+interface MobileNewsCarouselProps {
+  newsData: NewsArticle[]
+}
 
+const MobileNewsCarousel: React.FC<MobileNewsCarouselProps> = ({ newsData }) => {
   return (
     <div className='flex lg:hidden'>
       <Carousel 

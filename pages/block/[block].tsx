@@ -48,11 +48,16 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
             </ReactTooltip>
           </span>
           <span className='lg:flex mb-4'>
-            <h1 className='inline mr-1'>This block was mined on {new Date(block.time).toDateString().slice(3, 15)} at {new Date(block.time).toLocaleTimeString()}. (By</h1>
+            <h1 className='inline mr-1'>This block was mined on {new Date(block.time).toDateString().slice(3, 15)} at {new Date(block.time).toLocaleTimeString()}.</h1>
             {
-              block.height === 0 ? block.ticker === 'btc' ? <a href='https://en.wikipedia.org/wiki/Satoshi_Nakamoto' rel="noopener noreferrer" target='_blank' className='inline text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline'>Satoshi Nakamoto</a> : null : null
+              block.height === 0 ? block.ticker === 'btc' ? 
+              <div className='flex'>
+                <h1 className='mr-1'>(By</h1>
+                <a href='https://en.wikipedia.org/wiki/Satoshi_Nakamoto' rel="noopener noreferrer" target='_blank' className='inline text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline'>Satoshi Nakamoto</a> 
+                <h1>)</h1>
+              </div>
+              : null : null
             }
-            <h1>)</h1>
           </span>
         </div>
         <div className='flex-row text-center lg:text-left'>
