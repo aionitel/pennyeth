@@ -28,7 +28,7 @@ const NavItem: React.FC<NavItemProps> = ({ title, path, Icon }) => {
           <div className='bg-gray p-3 rounded-full'>
             <Icon style={{
               fontSize: 20,
-              color: urlPathname === path ? 'blue' : 'white'
+              color: urlPathname.slice(0, 4) === path.slice(0, 4)  ? 'blue' : 'white'
             }}/>
           </div>
           <span>
