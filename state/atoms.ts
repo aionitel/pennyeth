@@ -42,3 +42,9 @@ export const allWeeklyAssetsAtom = atom({
   default: [],
   effects_UNSTABLE: [persistAtom]
 })
+
+export const nftAtom = atom({
+  key: 'nft',
+  default: [],
+  effects_UNSTABLE: [persistAtom]
+})

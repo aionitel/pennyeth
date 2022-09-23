@@ -1,9 +1,11 @@
 import { NextPage } from 'next'
 import Head from 'next/head';
+import { useState } from 'react';
 import AssetHeader from '../components/asset/AssetHeader';
 import YearChart from '../components/chart/YearChart';
 import fetchAsset from '../data/prices/metric/fetchAsset';
 import fetchDailyAsset from '../data/prices/time/fetchDailyAsset';
+import { MdOutlineClose } from 'react-icons/md'
 
 interface Asset {
   name: string,
@@ -42,6 +44,7 @@ const allowedChart = [
 ]
 
 const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
+  const [textOpen, setTextOpen] = useState<boolean>(false);
 
   const formatter = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2,      
@@ -112,9 +115,19 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
       </div>
       {
         asset.desc ?
-          <div>
-            <h1 className='text-white text-3xl ml-6 my-5'>Detailed Info</h1>
-            <div dangerouslySetInnerHTML={{ __html: asset.desc }} className='text-chartGray ml-6' />
+          <div className='ml-6 mb-10'>
+            <h1 className='text-white text-3xl my-6'>Detailed Info</h1>
+            {
+              textOpen 
+              ? <div className='inline text-chartGray'>
+                  <p dangerouslySetInnerHTML={{ __html: asset.desc }} className='inline' />
+                  <p className='inline hover:cursor-pointer duration-300' onClick={() => setTextOpen(false)}>✖️</p>
+                </div>
+              : <div className='inline text-chartGray'>
+                  <p dangerouslySetInnerHTML={{ __html: asset.desc.slice(0, 300) }} className='inline' />
+                  <p onClick={() => setTextOpen(true)} className='hover:cursor-pointer inline ml-1 text-4xl'>...</p>
+                </div>
+            }
         </div>
         : null
       }

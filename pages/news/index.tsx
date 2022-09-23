@@ -16,7 +16,7 @@ const News: NextPage = () => {
       </Head>
       <div className='h-screen'>
         <div className='text-white'>
-          <h1>Latest Crypto News</h1>
+          <h1 className='text-3xl ml-8 my-7'>Latest Crypto News</h1>
           <NewsCarousel newsData={newsData} />
         </div>
       </div>
