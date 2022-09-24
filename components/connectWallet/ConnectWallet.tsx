@@ -34,6 +34,7 @@ const ConnectWallet: React.FC = () => {
         </div>
       </motion.div>
       <Modal
+        ariaHideApp={false}
         className='flex-col justify-center hidden lg:flex'
         isOpen={modalOpen}
         onRequestClose={() => setModalOpen(false)}

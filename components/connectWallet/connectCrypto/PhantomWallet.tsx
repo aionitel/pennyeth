@@ -48,7 +48,7 @@ const PhantomWallet: React.FC = () => {
       '
     >
       <h1 className='mr-2'>Connect with PhantomWallet</h1>
-      <BiGhost />
+      <BiGhost className='text-2xl' />
     </button>
   )
 }

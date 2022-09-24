@@ -53,7 +53,7 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
 
   return (
     <div 
-      className='lg:pt-12 pt-4 w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl'
+      className='lg:pt-10 pt-4 w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl'
       style={{
         height: allowedChart.includes(asset.ticker) ? null : '100vh'
       }}
@@ -91,13 +91,13 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
           <h2 className='text-chartGray'>Volume</h2>
           <h2>{formatter.format(asset.volume)} {asset.ticker}</h2>
         </div>
-        <div className='py-5 border-r-2 border-almostBlack pr-20 hidden 2xl:block'>
-          <h2 className='text-chartGray'>Stock to Flow</h2>
-          <h2>{formatter.format(asset.stockToFlow)}</h2>
-        </div>
         <div className='mt-5 pr-14'>
           <h2 className='text-chartGray'>All Time High</h2>
           <h2>${formatter.format(asset.allTimeHigh)}</h2>
+        </div>
+        <div className='py-5 border-r-2 border-almostBlack pr-20 hidden 2xl:block'>
+          <h2 className='text-chartGray'>Stock to Flow</h2>
+          <h2>{formatter.format(asset.stockToFlow)}</h2>
         </div>
       </div>
       <div className='text-white flex-col lg:hidden justify-between mr-20 text-center ml-20'>
@@ -109,13 +109,13 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
           <h2 className='text-chartGray'>Volume</h2>
           <h2>{formatter.format(asset.volume)}</h2>
         </div>
-        <div className='py-5 border-b border-almostBlack'>
-          <h2 className='text-chartGray'>Stock to Flow</h2>
-          <h2>{formatter.format(asset.stockToFlow)}</h2>
-        </div>
-        <div className='mt-10'>
+        <div className='mt-4'>
           <h2 className='text-chartGray'>All Time High</h2>
           <h2>${formatter.format(asset.allTimeHigh)}</h2>
+        </div>
+        <div className='py-7 border-b border-almostBlack'>
+          <h2 className='text-chartGray'>Stock to Flow</h2>
+          <h2>{formatter.format(asset.stockToFlow)}</h2>
         </div>
       </div>
       {

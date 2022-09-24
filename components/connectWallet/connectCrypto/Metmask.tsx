@@ -48,8 +48,8 @@ const Metmask: React.FC = () => {
       justify-center
       '
     >
-      <h1 className='text-center mr-2'>Connect with Metamask</h1>
-      <h1>🦊</h1>
+      <h1 className='mr-3 mt-1'>Connect with Metamask</h1>
+      <h1 className='text-2xl'>🦊</h1>
     </button>
   )
 }
