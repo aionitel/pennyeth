@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
 import Metmask from './connectCrypto/Metmask'
-import WalletConnect from './connectCrypto/WalletConnect'
 import PhantomWallet from './connectCrypto/PhantomWallet'
 import { motion } from 'framer-motion'
 import { AiFillQuestionCircle } from 'react-icons/ai'
@@ -67,7 +66,6 @@ const ConnectWallet: React.FC = () => {
         >
         <Metmask />
         <PhantomWallet />
-        <WalletConnect />
       </Modal>
     </>
   )
