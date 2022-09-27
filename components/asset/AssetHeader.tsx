@@ -16,7 +16,7 @@ const AssetHeader: React.FC<AssetHeaderProps> = ({ asset }) => {
  });
 
   return (
-    <div className='lg:flex ml-6 lg:justify-between max-w-screen-md w-screen'>
+    <div className='lg:flex ml-6 lg:justify-between w-screen lg:max-w-screen-md 2xl:max-w-screen-lg'>
       <div className='flex'>
         <img src={asset.image} height={imageSize} width={imageSize} />
          <h1 className='mt-5 mx-2 text-3xl'>{asset.name}</h1>
