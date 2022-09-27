@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import HomeChart from '../components/chart/YearChart'
@@ -13,9 +13,9 @@ const btcIconSize = 45;
 
 const Home: NextPage = () => {
   // dynamically import certain components that do data fetching stuff without ssr
-  const DynamicNewsCarousel = dynamic(() => import('../components/news/carousel/NewsCarousel'), {ssr: false})
-  const DynamicBtcText = dynamic(() => import("../components/price/BtcText"), {ssr: false})
-  const DynamicCollection = dynamic(() => import('../components/collection/MiniCollection'), {ssr: false})
+  const DynamicNewsCarousel = dynamic(() => import('../components/news/carousel/NewsCarousel'), {ssr: false});
+  const DynamicBtcText = dynamic(() => import("../components/price/BtcText"), {ssr: false});
+  const DynamicCollection = dynamic(() => import("../components/collection/MiniCollection"), {ssr: false});
 
   // get weekly timeseries btc data
   const weeklyBtc = useRecoilValue(weeklyBtcAtom);
