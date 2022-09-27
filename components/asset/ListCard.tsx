@@ -2,28 +2,7 @@ import React from 'react'
 import { IconType } from 'react-icons';
 import Link from 'next/link'
 import { RiArrowDownSFill, RiArrowUpSFill } from 'react-icons/ri'
-
-interface Asset {
-  name: string,
-  ticker: string,
-  image: string,
-  price: number,
-  dailyChange: number,
-  volume: number,
-  marketCap: number,
-  marketDominance: number,
-  supply: number,
-  rank: number,
-  stockToFlow: number,
-  medianTxFee: number,
-  allTimeHigh: number,
-  hashRate: number,
-  overview: string,
-  desc: string,
-  background: string,
-  blockReward: number,
-  consensusAlgorithm: string,
-}
+import { Asset } from '../../data/utils/types';
 
 interface ListCardProps {
   title: string,

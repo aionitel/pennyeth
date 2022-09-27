@@ -9,28 +9,6 @@ import { AiOutlineNodeIndex } from 'react-icons/ai'
 import { FaDog } from 'react-icons/fa'
 import { FcKey } from 'react-icons/fc'
 
-interface Asset {
-  name: string,
-  ticker: string,
-  image: string,
-  price: number,
-  dailyChange: number,
-  volume: number,
-  marketCap: number,
-  marketDominance: number,
-  supply: number,
-  rank: number,
-  stockToFlow: number,
-  medianTxFee: number,
-  allTimeHigh: number,
-  hashRate: number,
-  overview: string,
-  desc: string,
-  background: string,
-  blockReward: number,
-  consensusAlgorithm: string,
-}
-
 const Home: NextPage = () => {
   const DynamicCollection = dynamic(() => import('../../components/collection/Collection'), {ssr: false});
 
