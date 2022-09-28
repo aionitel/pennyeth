@@ -3,7 +3,7 @@ import NavBarItemsData from './NavItemData'
 import Link from 'next/link'
 import ConnectWallet from '../connectWallet/ConnectWallet'
 import { useRecoilValue } from 'recoil'
-import { currUserAtom } from '../../state/atoms'
+import { userAtom } from '../../state/atoms'
 import LoggedInHeader from '../connectWallet/LoggedInHeader'
 import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
@@ -16,7 +16,7 @@ const DynamicNavItem = dynamic(() => import('./NavItem'), {ssr: false})
 const DynamicCurrPriceLogos = dynamic(() => import('../price/CurrPriceLogos'), {ssr: false})
 
 const NavBar: React.FC = () => {
-  const user = useRecoilValue(currUserAtom)
+  const user = useRecoilValue(userAtom);
 
   return (
     <nav 

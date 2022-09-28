@@ -5,8 +5,8 @@ import { NewsArticle } from "../data/utils/types";
 const { persistAtom } = recoilPersist();
 
 // curr user's eth address
-export const currUserAtom = atom({
-  key: 'currUser',
+export const userAtom = atom({
+  key: 'user',
   default: '' as string ,
   effects_UNSTABLE: [persistAtom]
 })

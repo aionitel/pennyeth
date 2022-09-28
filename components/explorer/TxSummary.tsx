@@ -8,7 +8,6 @@ interface TxSummaryProps {
 }
 
 const TxSummary: React.FC<TxSummaryProps> = ({ tx }) => {
-  console.log(tx)
   return (
     <>
     <div className='mt-10 lg:ml-8 ml-4'>
@@ -28,17 +27,19 @@ const TxSummary: React.FC<TxSummaryProps> = ({ tx }) => {
           <h1 className='block lg:hidden'>From</h1>
           {
               tx.inputs[0].output_index !== -1 ? tx.inputs.map(item => (
-              <Link href={`/address/${item.addresses[0]}?ticker=${tx.ticker}`} passHref>
-                <div>
-                  <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] hidden lg:block'>
-                    {tx.ticker === 'eth' ? '0x' : null}{item.addresses[0]}
-                  </h1>
-                  <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] block lg:hidden'>
-                    {tx.ticker === 'eth' ? '0x' : null}{item.addresses[0].slice(0, 30)}...
-                  </h1>
-                  <h1>{item.output_value / 100000000}</h1>
-                </div>
-              </Link>
+              <div>
+                <Link href={`/address/${item.addresses[0]}?ticker=${tx.ticker}`} passHref>
+                  <div>
+                    <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] hidden lg:block'>
+                      {tx.ticker === 'eth' ? '0x' : null}{item.addresses[0]}
+                    </h1>
+                    <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] block lg:hidden'>
+                      {tx.ticker === 'eth' ? '0x' : null}{item.addresses[0].slice(0, 30)}...
+                    </h1>
+                  </div>
+                </Link>
+                <h1>{item.output_value / 100000000}</h1>
+              </div>
             ))
             : <div className="flex"><h1 className='text-green-400 mr-1'>COINBASE</h1><h1>(Newly Generated Coins)</h1></div>
           }

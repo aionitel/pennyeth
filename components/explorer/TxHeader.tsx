@@ -13,9 +13,13 @@ const TxHeader:React.FC<TxHeaderProps> = ({ tx }) => {
         <h1>{tx.ticker === 'eth' ? '0x' : null}{tx.hash.slice(0, 15)}...</h1>
       </div>
       <div className='text-chartGray mt-8 lg:ml-8 ml-4'>
-        <p>This transaction was first broadcast to the Bitcoin network on {new Date(tx.dateReceived).toDateString()} at {new Date(tx.dateReceived).toLocaleTimeString()}.
-            It currently has {tx.confirmations.toLocaleString()} confirmations on the blockchain.
-        </p>
+        {
+          tx.ticker === 'btc' 
+          ? <p>This transaction was first broadcast to the Bitcoin network on {new Date(tx.dateReceived).toDateString()} at {new Date(tx.dateReceived).toLocaleTimeString()}.
+              It currently has {tx.confirmations.toLocaleString()} confirmations on the blockchain. </p>
+          : <p>This transaction was first broadcast to the Ethereum network on {new Date(tx.dateReceived).toDateString()} at {new Date(tx.dateReceived).toLocaleTimeString()}.
+          It currently has {tx.confirmations.toLocaleString()} confirmations on the blockchain. </p>
+        }
       </div>
     </div>
   )

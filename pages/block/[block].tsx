@@ -99,7 +99,7 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
         </div>
       <div className='my-8 hidden lg:block'>
         <div className='flex'>
-          <h1 className='text-3xl text-white mb-2'>Block Transactions</h1>
+          <h1 className='text-3xl text-white'>Block Transactions</h1>
           <BsFillInfoCircleFill data-tip={<h1></h1>} className='mt-3 mx-2 text-lightgray' />
           <ReactTooltip place='right'>
             <h1>All transactions included in this block.</h1>

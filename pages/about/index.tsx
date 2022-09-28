@@ -11,7 +11,7 @@ const About = () => {
         <div>
           <h1 className='text-5xl'>What is PennyETH?</h1>
           <p className='text-lg text-chartGray my-7'>
-            PennyETH is a crypto web app that has Ethereum and Solana intergrations,
+            PennyETH is a crypto web app that has Ethereum intergrations,
             aswell as Web 3.0 capabilities.
           </p>
         </div>
@@ -26,7 +26,7 @@ const About = () => {
         <div>
           <h1 className='text-5xl'>Can I send money using PennyETH?</h1>
           <p className='text-lg text-chartGray my-7'>
-            Yes, you can send Eth or Sol once you have connected your Ethereum or Solana wallet.
+            Yes, you can send eth once you have connected your Ethereum wallet.
           </p>
         </div>
         <div>
