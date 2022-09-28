@@ -5,19 +5,31 @@ import ReactTooltip from 'react-tooltip'
 import { useMoralis } from 'react-moralis'
 import { useRecoilState } from 'recoil'
 import { userAtom } from '../../state/atoms'
+import { useToasts } from 'react-toast-notifications'
 
 // Connect button that allows for user to connect eth or sol wallet with modal
 
 const ConnectWallet: React.FC = () => {
-  const { authenticate, isAuthenticated, user } = useMoralis();
+  const [currUser, setCurrUser] = useRecoilState(userAtom); // setting global user string
+  const { addToast } = useToasts(); // for showing notifications
+  const { Moralis, user } = useMoralis(); // moralis stuff
 
   const handleLogin = async () => {
-    if (!isAuthenticated) {
-      await authenticate()
-        .then(function(user) {
-          
-        })
+    const user = await Moralis.authenticate({ signingMessage: "PennyETH Login" }); // main user login endpoint
+
+    if (!user) {
+      addToast("Couldn't login with Metamask", {
+        appearance: 'warning',
+        autoDismiss: true,
+      })
     }
+
+    setCurrUser(user?.get("ethAddress"))
+
+    addToast(`Logged in with Metamask, your wallet address: ${user?.get("ethAddress")}`, {
+      appearance: 'success',
+      autoDismiss: true,
+    })
   }
 
   return (
@@ -45,4 +57,4 @@ const ConnectWallet: React.FC = () => {
   )
 }
 
-export default ConnectWallet
+export default ConnectWallet;

@@ -10,8 +10,6 @@ const NewsCard: React.FC<NewsArticle> = ({ title, image, date, url }) => {
 
   window.onload = function() {
     setCover(images[Math.floor(Math.random() * images.length)]);
-
-    console.log("setting images");
   }
 
   return (

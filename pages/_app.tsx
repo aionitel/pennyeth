@@ -5,8 +5,9 @@ import { MoralisProvider } from 'react-moralis'
 import { RecoilRoot } from 'recoil'
 import { ToastProvider } from 'react-toast-notifications'
 import NextNProgress from "nextjs-progressbar";
+import { useEffect } from 'react'
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const PennyETH = ({ Component, pageProps }: AppProps) => {
 
   if (typeof window !== 'undefined') {
     document.body.style.background = 'black';
@@ -26,4 +27,4 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   )
 }
 
-export default MyApp
+export default PennyETH;

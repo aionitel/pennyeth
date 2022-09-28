@@ -1,15 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useRecoilValue } from 'recoil';
 import { allAssetsAtom } from '../../state/atoms';
-import Link from 'next/link';
 
 const logoSize = 30;
 
 const CurrPriceLogos: React.FC = () => {
-  // get asset data from recoil
-  const assetData = useRecoilValue(allAssetsAtom);
-
+  const allAssets = useRecoilValue(allAssetsAtom);
+  
   return (
     <motion.div 
       className='flex text-base mt-6 mb-3'
@@ -24,7 +23,7 @@ const CurrPriceLogos: React.FC = () => {
             width={logoSize} 
             alt='btc_logo'
           />
-          <h1 className='mt-1 ml-2'>${assetData[0].price.toLocaleString().slice(0, 9)}</h1>
+          <h1 className='mt-1 ml-2'>${allAssets[0].price.toLocaleString().slice(0, 9)}</h1>
         </div>
       </Link>
       <Link href='/ethereum' passHref>
@@ -34,7 +33,7 @@ const CurrPriceLogos: React.FC = () => {
             alt='eth_logo'
             style={{ width: logoSize - 5, height: logoSize - 4, marginTop: 3 }}
           />
-          <h1 className='mt-1 ml-2'>${assetData[1].price.toLocaleString().slice(0, 8)}</h1>
+          <h1 className='mt-1 ml-2'>${allAssets[1].price.toLocaleString().slice(0, 8)}</h1>
         </div>
       </Link>
     </motion.div>

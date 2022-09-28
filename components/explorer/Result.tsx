@@ -4,7 +4,11 @@ import { FaWallet } from 'react-icons/fa'
 import { SiDatabricks } from 'react-icons/si'
 import { BiTransfer } from 'react-icons/bi'
 
-const Result: React.FC = ({ data }: any) => {
+interface ResultProps {
+  data: any;
+}
+
+const Result: React.FC<ResultProps> = ({ data }) => {
   return (
     <Link href={{
       pathname: data.type === 'Block' ? `/block/${data.hash}` : data.type === 'Address' ? `/address/${data.address}` : `/tx/${data.hash}`,

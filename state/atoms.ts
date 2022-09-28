@@ -4,6 +4,18 @@ import { NewsArticle } from "../data/utils/types";
 
 const { persistAtom } = recoilPersist();
 
+interface AssetProps {
+  name: string,
+  ticker: string,
+  image: string,
+  price: number,
+  dailyChange: number,
+  volume: number,
+  marketCap: number,
+  marketDominance: number,
+  supply: number,
+}
+
 // curr user's eth address
 export const userAtom = atom({
   key: 'user',
@@ -33,18 +45,107 @@ export const weeklyBtcAtom  = atom({
 
 export const allAssetsAtom = atom({
   key: "allAssets",
-  default: [],
-  effects_UNSTABLE: [persistAtom]
-})
-
-export const allWeeklyAssetsAtom = atom({
-  key: 'allWeeklyAssets',
-  default: [],
-  effects_UNSTABLE: [persistAtom]
-})
-
-export const nftAtom = atom({
-  key: 'nft',
-  default: [],
+  default: [ // bs starting values
+    {
+      dailyChange: 3.57456209859366,
+      image: "https://i.imgur.com/wbZ6UVD.png",
+      marketCap
+: 
+377999350649.8065,
+marketDominance
+: 
+32.76475609563796,
+name
+: 
+"Bitcoin",
+price
+: 
+19672.361584407277,
+supply
+: 
+19162337,
+ticker
+: 
+"BTC",
+volume
+: 
+16647736105.544996
+    },
+    {
+      dailyChange: 3.57456209859366,
+      image: "https://i.imgur.com/wbZ6UVD.png",
+      marketCap
+: 
+377999350649.8065,
+marketDominance
+: 
+32.76475609563796,
+name
+: 
+"Bitcoin",
+price
+: 
+19672.361584407277,
+supply
+: 
+19162337,
+ticker
+: 
+"BTC",
+volume
+: 
+16647736105.544996
+    },
+    {
+      dailyChange: 3.57456209859366,
+      image: "https://i.imgur.com/wbZ6UVD.png",
+      marketCap
+: 
+377999350649.8065,
+marketDominance
+: 
+32.76475609563796,
+name
+: 
+"Bitcoin",
+price
+: 
+19672.361584407277,
+supply
+: 
+19162337,
+ticker
+: 
+"BTC",
+volume
+: 
+16647736105.544996
+    },
+    {
+      dailyChange: 3.57456209859366,
+      image: "https://i.imgur.com/wbZ6UVD.png",
+      marketCap
+: 
+377999350649.8065,
+marketDominance
+: 
+32.76475609563796,
+name
+: 
+"Bitcoin",
+price
+: 
+19672.361584407277,
+supply
+: 
+19162337,
+ticker
+: 
+"BTC",
+volume
+: 
+16647736105.544996
+    }
+  ],
   effects_UNSTABLE: [persistAtom]
 })
