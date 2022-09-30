@@ -6,30 +6,27 @@ import { useMoralis } from 'react-moralis'
 import { useRecoilState } from 'recoil'
 import { userAtom } from '../../state/atoms'
 import { useToasts } from 'react-toast-notifications'
+import { useRouter } from 'next/router'
 
 // Connect button that allows for user to connect eth or sol wallet with modal
 
 const ConnectWallet: React.FC = () => {
+  const router = useRouter();
+
   const [currUser, setCurrUser] = useRecoilState(userAtom); // setting global user string
   const { addToast } = useToasts(); // for showing notifications
   const { Moralis, user } = useMoralis(); // moralis stuff
 
   const handleLogin = async () => {
-    const user = await Moralis.authenticate({ signingMessage: "PennyETH Login" }); // main user login endpoint
-
-    if (!user) {
-      addToast("Couldn't login with Metamask", {
-        appearance: 'warning',
-        autoDismiss: true,
+    const user = await Moralis.authenticate({ signingMessage: "PennyETH Login" })
+      .catch(e => {
+        addToast(
+          <h1>It seems you don't have a Metamask wallet. Download Metamask
+            <a href='https://metamask.io' target='_blank' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-1'>here.</a>
+          </h1>, {
+          appearance: 'info',
+        })
       })
-    }
-
-    setCurrUser(user?.get("ethAddress"))
-
-    addToast(`Logged in with Metamask, your wallet address: ${user?.get("ethAddress")}`, {
-      appearance: 'success',
-      autoDismiss: true,
-    })
   }
 
   return (
