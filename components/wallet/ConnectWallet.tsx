@@ -42,7 +42,7 @@ const ConnectWallet: React.FC = () => {
             <h1>Connect Wallet</h1>
           </button>
           <div className='flex pl-5 pt-4 text-2xl decoration-red' data-tip={(<div>this is a tip</div>)}>
-            <AiFillQuestionCircle className='text-lightgray'  />
+            <AiFillQuestionCircle className='text-almostBlack' />
           </div>
           <ReactTooltip place='right'>
             <h1>

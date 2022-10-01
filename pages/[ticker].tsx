@@ -91,7 +91,7 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
           <h2 className='text-chartGray'>Volume</h2>
           <h2>{formatter.format(asset.volume)} {asset.ticker}</h2>
         </div>
-        <div className='mt-5 pr-14'>
+        <div className='mt-5 pr-14 border-r-2 border-almostBlack'>
           <h2 className='text-chartGray'>All Time High</h2>
           <h2>${formatter.format(asset.allTimeHigh)}</h2>
         </div>
