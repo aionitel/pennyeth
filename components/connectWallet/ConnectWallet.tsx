@@ -6,13 +6,10 @@ import { useMoralis } from 'react-moralis'
 import { useRecoilState } from 'recoil'
 import { userAtom } from '../../state/atoms'
 import { useToasts } from 'react-toast-notifications'
-import { useRouter } from 'next/router'
 
 // Connect button that allows for user to connect eth or sol wallet with modal
 
 const ConnectWallet: React.FC = () => {
-  const router = useRouter();
-
   const [currUser, setCurrUser] = useRecoilState(userAtom); // setting global user string
   const { addToast } = useToasts(); // for showing notifications
   const { Moralis, user } = useMoralis(); // moralis stuff
@@ -27,6 +24,10 @@ const ConnectWallet: React.FC = () => {
           appearance: 'info',
         })
       })
+
+    if (user) {
+      setCurrUser(user.get("ethAddress"));
+    }
   }
 
   return (

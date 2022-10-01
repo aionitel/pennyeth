@@ -23,8 +23,8 @@ module.exports = {
         'lightgray': '#202020',
         "medGray": "#9c9c9c",
         "chartGray": "#666",
-        "pink": '#FFCCCC',
         'almostBlack': "#141414",
+        "pink": '#FFCCCC',
         "black": '#000000'
       }
     },
@@ -32,7 +32,9 @@ module.exports = {
   purge: {
     safelist: [
       'text-green-400',
-      'text-red'
+      'text-red',
+      'text-base',
+      'text-center',
     ]
   }
 }

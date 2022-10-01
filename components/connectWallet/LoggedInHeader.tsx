@@ -1,19 +1,21 @@
-import React, { useState } from 'react'
-import { useRecoilValue } from 'recoil'
-import { userAtom } from '../../state/atoms'
+import React from 'react'
+import { motion } from 'framer-motion';
+import { useRecoilValue } from 'recoil';
+import { userAtom } from '../../state/atoms';
+import Transfer from './Transfer';
 
-// when user has connected wallet, show wallet address in navbar
-
-const LoggedInHeader = () => {
+const LoggedInHeader: React.FC = () => {
   const user = useRecoilValue(userAtom);
-  
+
   return (
-    <div className='text-white text-center'>
+    <motion.div
+      className='mt-10'
+    >
       <div>
-        <h1>Wallet Connected</h1>
-        <p>{user.slice(0, 15)}...</p>
+        <h1><p className='text-green-400'>Wallet Connected</p>  {user.slice(0, 20)}</h1>
       </div>
-    </div>
+      <Transfer />
+    </motion.div>
   )
 }
 
