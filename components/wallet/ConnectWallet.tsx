@@ -21,7 +21,8 @@ const ConnectWallet: React.FC = () => {
           <h1>It seems you don't have a Metamask wallet. Download Metamask
             <a href='https://metamask.io' target='_blank' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-1'>here.</a>
           </h1>, {
-          appearance: 'info',
+          appearance: 'warning',
+          autoDismiss: true
         })
       })
 
