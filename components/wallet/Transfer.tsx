@@ -3,6 +3,7 @@ import Modal from 'react-modal'
 
 const Transfer: React.FC = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [isSend, setIsSend] = useState<boolean>(true);
 
   return (
     <>
@@ -38,16 +39,16 @@ const Transfer: React.FC = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            backgroundColor: 'rgba(255, 255, 255, 0.1)',
             opacity: typeof window !== 'undefined' && screen.width < 1200 ? 1 : 1
           },
           content: {
             position: 'absolute',
-            top: '230px',
-            bottom: '270px',
+            top: '100px',
+            bottom: '140px',
             left: '500px',
             right: '500px',
-            border: '1px solid #141414',
+            border: '2px solid #141414',
             background: 'black',
             overflow: 'auto',
             WebkitOverflowScrolling: 'touch',
@@ -57,9 +58,9 @@ const Transfer: React.FC = () => {
         }}
         >
           <div>
-            <div className='flex text-chartGray text-2xl border-b border-chartGray py-4'>
-              <button className='px-20'>Send</button>
-              <button className='px-20'>Receive</button>
+            <div className='text-chartGray flex justify-between text-3xl'>
+              <button onClick={() => setIsSend(true)} className={`w-52 ${isSend ? 'border-b' : null}`}>Send</button>
+              <button onClick={() => setIsSend(false)} className={`w-56 border-l py-4 ${isSend ? null : 'border-b'}`}>Receive</button>
             </div>
           </div>
       </Modal>
