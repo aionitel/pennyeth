@@ -28,6 +28,11 @@ const ConnectWallet: React.FC = () => {
 
     if (user) {
       setCurrUser(user.get("ethAddress"));
+
+      addToast("Connected Wallet.", {
+        appearance: 'success',
+        autoDismiss: true
+      })
     }
   }
 
