@@ -59,8 +59,11 @@ const Transfer: React.FC = () => {
         >
           <div>
             <div className='text-chartGray flex justify-between text-3xl'>
-              <button onClick={() => setIsSend(true)} className={`w-52 ${isSend ? 'border-b' : null}`}>Send</button>
-              <button onClick={() => setIsSend(false)} className={`w-56 border-l py-4 ${isSend ? null : 'border-b'}`}>Receive</button>
+              <button onClick={() => setIsSend(true)} className={`w-52 ${isSend ? null : 'border-b-2'}`}>Send</button>
+              <button onClick={() => setIsSend(false)} className={`w-56 border-l-2 py-4 ${isSend ? 'border-b-2' : null }`}>Receive</button>
+            </div>
+            <div>
+
             </div>
           </div>
       </Modal>
