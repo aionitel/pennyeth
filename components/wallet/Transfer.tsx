@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
+import Send from './Send';
 
 const Transfer: React.FC = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
@@ -39,18 +40,19 @@ const Transfer: React.FC = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            backgroundColor: 'rgba(0, 0, 0, 0.7)',
             opacity: typeof window !== 'undefined' && screen.width < 1200 ? 1 : 1
           },
           content: {
             position: 'absolute',
             top: '100px',
             bottom: '140px',
-            left: '500px',
-            right: '500px',
-            border: '2px solid #141414',
+            left: '505px',
+            right: '505px',
+            border: '2px solid #202020',
             background: 'black',
             overflow: 'auto',
+            borderRadius: 5,
             WebkitOverflowScrolling: 'touch',
             outline: 'none',
             opacity: typeof window !== 'undefined' && screen.width < 1200 ? 1 : 1
@@ -58,12 +60,12 @@ const Transfer: React.FC = () => {
         }}
         >
           <div>
-            <div className='text-chartGray flex justify-between text-3xl'>
-              <button onClick={() => setIsSend(true)} className={`w-52 ${isSend ? null : 'border-b-2'}`}>Send</button>
-              <button onClick={() => setIsSend(false)} className={`w-56 border-l-2 py-4 ${isSend ? 'border-b-2' : null }`}>Receive</button>
+            <div className='text-chartGray flex justify-between text-xl'>
+              <button onClick={() => setIsSend(true)} className={`w-52 hover:bg-almostBlack ${isSend ? 'text-blue' : 'border-b-2 border-almostBlack text-white'}`}>Send</button>
+              <button onClick={() => setIsSend(false)} className={`w-56 hover:bg-almostBlack border-almostBlack border-l-2 py-5 ${isSend ? 'border-b-2 text-white' : 'text-blue' }`}>Receive</button>
             </div>
             <div>
-
+              {isSend ? <Send /> : null}
             </div>
           </div>
       </Modal>
