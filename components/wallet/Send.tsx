@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useWeb3Transfer, useMoralis } from "react-moralis";
+import { useMoralis } from "react-moralis";
 
 const Send: React.FC = () => {
   const [amount, setAmount] = useState<number>(0);
@@ -7,15 +7,12 @@ const Send: React.FC = () => {
 
   const { Moralis } = useMoralis();
 
-  const { fetch, error, isFetching} = useWeb3Transfer({
-    type: 'native',
-    amount: Moralis.Units.ETH(amount),
-    receiver: address
-  })
-
   const handleSend = async () => {
-    const tx = fetch();
-    console.log(tx)
+    const tx = await Moralis.transfer({
+      type: 'native',
+      amount: Moralis.Units.ETH(amount === NaN ? 0 : amount),
+      receiver: address
+    })
   }
 
   return (
@@ -26,7 +23,7 @@ const Send: React.FC = () => {
           type='number'
           step='any'
           placeholder='0'
-          min='0'
+          min={0}
           onChange={(e) => setAmount(parseFloat(e.target.value))}
           value={amount}
           spellCheck={false}

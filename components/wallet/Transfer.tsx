@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
+import Receive from './Receive';
 import Send from './Send';
 
 const Transfer: React.FC = () => {
@@ -66,6 +67,9 @@ const Transfer: React.FC = () => {
             </div>
             <div className='mt-8'>
               {isSend ? <Send /> : null}
+            </div>
+            <div>
+              {isSend ? null : <Receive />}
             </div>
           </div>
       </Modal>
