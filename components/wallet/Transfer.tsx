@@ -68,7 +68,7 @@ const Transfer: React.FC = () => {
             <div className='mt-8'>
               {isSend ? <Send /> : null}
             </div>
-            <div>
+            <div className='flex justify-center'>
               {isSend ? null : <Receive />}
             </div>
           </div>
