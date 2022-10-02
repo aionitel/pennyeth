@@ -1,7 +1,7 @@
 export const getChartWidth = () => {
-  if (typeof window !== 'undefined' && window.outerHeight <= 899) { // 400 around mobile phone width
+  if (typeof window !== 'undefined' && window.outerWidth <= 899) { // 400 around mobile phone width
     return 380
-  } else if (typeof window !== 'undefined' && window.outerHeight <= 900 ) { // laptops and small screens
+  } else if (typeof window !== 'undefined' && window.outerWidth <= 1900 ) { // laptops and small screens
     return 1100
   } else if (typeof window !== 'undefined' && window.outerWidth <= 1920) { // large monitors and displays
     return 1496
@@ -9,11 +9,11 @@ export const getChartWidth = () => {
 }
 
 export const getChartHeight = () => {
-  if (typeof window !== 'undefined' && screen.height <= 899) {
+  if (typeof window !== 'undefined' && screen.width <= 899) {
     return 150
-  } else if (typeof window !== 'undefined' && screen.height <= 900 ) {
+  } else if (typeof window !== 'undefined' && screen.width <= 900 ) {
     return 300
-  } else if (typeof window !== 'undefined' && screen.height <= 1100) {
+  } else if (typeof window !== 'undefined' && screen.width <= 1100) {
     return 340
   }
 }

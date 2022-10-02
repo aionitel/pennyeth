@@ -5,14 +5,19 @@ const Send: React.FC = () => {
 
   return (
     <div>
-      <div>
+      <div className='flex justify-center'>
         <input
-          type='text'
+          className='bg-black text-chartGray w-20'
+          style={{ fontSize: 100 }}
+          type='number'
+          step='any'
           placeholder='0'
-          onChange={(e) => setAmount(Number(e.target.value))}
+          min='0'
+          onChange={(e) => setAmount(parseFloat(e.target.value))}
           value={amount}
           spellCheck={false}
         />
+        <h1 className='text-blue'>ETH</h1>
       </div>
     </div>
   )
