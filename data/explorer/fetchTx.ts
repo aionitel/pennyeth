@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Tx } from '../utils/types';
 
 const fetchTx = async (ticker: string, txId: string) => {
-  const url = `https://api.blockcypher.com/v1/${ticker}/main/txs/${txId}`;
+  const url = `https://api.blockcypher.com/v1/${ticker}/main/txs/${txId}`
 
   const { data: res } = await axios.get(url);
 

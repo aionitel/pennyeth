@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Address } from '../utils/types';
 
 const fetchAddr = async (ticker: string, addr: string) => {
-  const url = `https://api.blockcypher.com/v1/${ticker}/main/addrs/${addr}`;
+  const url = `https://api.blockcypher.com/v1/${ticker}/main/addrs/${addr}`
 
   const { data: res } = await axios.get(url);
 

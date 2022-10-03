@@ -7,6 +7,7 @@ import ReactTooltip from 'react-tooltip';
 import { AiFillCloseCircle } from 'react-icons/ai'
 import { useToasts } from 'react-toast-notifications';
 import { useMoralis } from 'react-moralis';
+import Wallet from './Wallet';
 
 const LoggedInHeader: React.FC = () => {
   const [user, setUser] = useRecoilState(userAtom);
@@ -26,9 +27,7 @@ const LoggedInHeader: React.FC = () => {
 
   return (
     <motion.div>
-      <div className='flex justify-center mr-6'>
-        <h1><p className='text-green-400 text-center text-sm'>Wallet Connected</p><p className='text-lg'>{user.slice(0, 8)}...{user.slice(10, 18)}</p></h1>
-      </div>
+      <Wallet />
       <div className='mt-8'>
         <Transfer />
       </div>
