@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { userAtom } from '../../state/atoms';
 import Modal from 'react-modal'
 import Link from 'next/link';
 import axios from 'axios';
+import { useMoralis } from 'react-moralis';
 
 const Wallet: React.FC = () => {
-  const user = useRecoilValue(userAtom);
+  const [user, setUser] = useRecoilState(userAtom);
+
+  const { logout } = useMoralis();
 
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [balance, setBalance] = useState<number>();
@@ -71,16 +74,25 @@ const Wallet: React.FC = () => {
               <h1 className='text-blue ml-1 hover:underline hover:opacity-[0.9] hover:cursor-pointer'>{user}</h1>
             </Link>
           </div>
-          <div className='ml-8 mt-4 2xl:ml-20 2xl:pl-20'>
+          <div className='ml-12 mt-4 2xl:ml-20 2xl:pl-20'>
             <img 
               src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${user}`} 
-              width={280} 
-              className='2xl:ml-10 2xl:my-12'
+              width={225} 
+              className='ml-4 2xl:ml-20 2xl:my-12'
             />
           </div>
-          <div className='text-chartGray text-center flex'>
+          <div className='text-chartGray text-center flex justify-center my-3 2xl:my-12'>
             <h1>Balance:</h1>
             <h1 className='ml-1 text-blue'>{balance / 1000000000000000000} ETH</h1>
+          </div>
+          <div 
+            className='bg-red flex justify-center text-white py-4 mx-20 hover:cursor-pointer hover:scale-105 transition-all rounded-2xl text-base hover:rounded-none duration-300'
+            onClick={() => {
+              setUser("");
+              logout();
+            }}
+          >
+            <h1>Logout</h1>
           </div>
         </div>
       </Modal>
