@@ -1,13 +1,13 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import fetchTx from "../../data/explorer/fetchTx";
-import TxHeader from "../../components/explorer/TxHeader";
-import TxSummary from "../../components/explorer/EthTxSummary";
+import TxHeader from "../../components/explorer/tx/TxHeader";
+import TxSummary from "../../components/explorer/tx/EthTxSummary";
 import Link from "next/link";
 import Search from "../../components/explorer/Search";
 import { Tx } from '../../data/utils/types'
-import BtcTxSummary from "../../components/explorer/BtcTxSummary";
-import EthTxSummary from "../../components/explorer/EthTxSummary";
+import BtcTxSummary from "../../components/explorer/tx/BtcTxSummary";
+import EthTxSummary from "../../components/explorer/tx/EthTxSummary";
 
 interface TxPageProps {
   tx: Tx

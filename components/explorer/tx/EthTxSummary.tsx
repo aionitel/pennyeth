@@ -1,13 +1,13 @@
-import React from 'react'
 import Link from 'next/link';
+import React from 'react'
 import { ImArrowRight } from 'react-icons/im'
-import { Tx } from '../../data/utils/types'
+import { Tx } from '../../../data/utils/types'
 
-interface BtcTxSummaryProps {
+interface EthTxSummaryProps {
   tx: Tx
 }
 
-const BtcTxSummary: React.FC<BtcTxSummaryProps> = ({ tx }) => {
+const EthTxSummary: React.FC<EthTxSummaryProps> = ({ tx }) => {
   return (
     <>
     <div className='mt-10 lg:ml-8 ml-4'>
@@ -15,19 +15,19 @@ const BtcTxSummary: React.FC<BtcTxSummaryProps> = ({ tx }) => {
     </div>
       <div className='flex text-chartGray my-5 lg:ml-8 ml-4'>
         <h1 className='text-chartGray'>Fee</h1>
-        <h1 className='ml-12 mr-1'>{tx.fees * 0.00000001}</h1>
+        <h1 className='ml-12 mr-1'>{tx.fees / 1000000000000000000}</h1>
         <h1>{tx.ticker.toUpperCase()}</h1>
       </div>
       <div className='flex text-chartGray lg:ml-8 ml-4 mb-5'>
         <h1>Total</h1>
-        <h1 className='ml-8'>{tx.total * 0.00000001} {tx.ticker.toUpperCase()}</h1>
+        <h1 className='ml-8'>{tx.total / 1000000000000000000 } {tx.ticker.toUpperCase()}</h1>
       </div>
       <div className='flex-row lg:flex justify-between text-white lg:ml-8 ml-4'>
-        <div className='flex-row'>
+        <div className='flex'>
           <h1 className='block lg:hidden'>From</h1>
           {
               tx.inputs[0].output_index !== -1 ? tx.inputs.map(item => (
-              <div className='flex'>
+              <div>
                 <Link href={`/address/${item.addresses[0]}?ticker=${tx.ticker}`} passHref>
                   <div>
                     <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] hidden lg:block'>
@@ -38,7 +38,6 @@ const BtcTxSummary: React.FC<BtcTxSummaryProps> = ({ tx }) => {
                     </h1>
                   </div>
                 </Link>
-                <h1 className='text-chartGray ml-2'>{item.output_value * 0.00000001} BTC</h1>
               </div>
             ))
             : <div className="flex"><h1 className='text-green-400 mr-1'>COINBASE</h1><h1>(Newly Generated Coins)</h1></div>
@@ -59,7 +58,7 @@ const BtcTxSummary: React.FC<BtcTxSummaryProps> = ({ tx }) => {
                     </h1>
                   </div>
                 </Link>
-                <h1 className='text-chartGray ml-2'>{item.value * 0.00000001} BTC</h1>
+                <h1 className='text-chartGray ml-2'>{item.value / 1000000000000000000} ETH</h1>
               </div>
             ))
           }
@@ -69,4 +68,4 @@ const BtcTxSummary: React.FC<BtcTxSummaryProps> = ({ tx }) => {
   )
 }
 
-export default BtcTxSummary;
+export default EthTxSummary;

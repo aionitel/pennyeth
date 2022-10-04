@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tx } from '../../data/utils/types';
+import { Tx } from '../../../data/utils/types';
 
 interface TxHeaderProps {
   tx: Tx;
@@ -7,7 +7,7 @@ interface TxHeaderProps {
 
 const TxHeader:React.FC<TxHeaderProps> = ({ tx }) => {
   return (
-    <div className='max-w-screen-lg w-screen'>
+    <div className='w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl'>
       <div className='flex-row lg:flex text-3xl mt-7 lg:ml-8 ml-4 text-white'>
         <h1 className='mr-2'>Transaction</h1>
         <h1>{tx.ticker === 'eth' ? '0x' : null}{tx.hash.slice(0, 15)}...</h1>
