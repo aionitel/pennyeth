@@ -1,10 +1,10 @@
 import { NextPage } from 'next'
 import Head from 'next/head';
 import React from 'react'
-import fetchBlock from '../../data/explorer/fetchBlock';
+import fetchBlock from '../../../data/explorer/fetchBlock';
 import { BsFillInfoCircleFill } from 'react-icons/bs'
 import ReactTooltip from 'react-tooltip';
-import Search from '../../components/explorer/Search';
+import Search from '../../../components/explorer/Search';
 import Link from 'next/link';
 import { FaClipboard } from 'react-icons/fa'
 
@@ -95,10 +95,10 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
           </div>
           <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Previous Block</h1>
-            <Link href={`/block/${block.prevBlock}?ticker=${block.ticker}`} passHref>
+            <Link href={`/explorer/block/${block.prevBlock}?ticker=${block.ticker}`} passHref>
               <h1 className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-2 hidden lg:inline'>{block.ticker === 'eth' ? '0x' : null}{block.prevBlock}</h1>
             </Link>
-            <Link href={`/block/${block.prevBlock}?ticker=${block.ticker}`} passHref>
+            <Link href={`/explorer/block/${block.prevBlock}?ticker=${block.ticker}`} passHref>
               <h1 className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-2 block lg:hidden'>{block.ticker === 'eth' ? '0x' : null}{block.prevBlock.slice(0, 35)}...</h1>
             </Link>
           </div>
@@ -113,11 +113,11 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
         </div>
         {
           block.txs.map(item => (
-            <Link href={`/tx/${item}?ticker=${block.ticker}`} passHref key=''>
-              <>
+            <Link href={`/explorer/tx/${item}?ticker=${block.ticker}`} passHref key=''>
+              <div>
                 <h1 className='my-4 text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline hidden lg:block'>{block.ticker === 'eth' ? '0x' : null}{item}</h1>
                 <h1 className='my-4 text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline block lg:hidden'>{block.ticker === 'eth' ? '0x' : null}{item.slice(0, 30)}...</h1>
-              </>
+              </div>
             </Link>
           ))
         }

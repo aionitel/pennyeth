@@ -70,7 +70,7 @@ const Wallet: React.FC = () => {
         <div>
           <div className='text-chartGray lg:text-xs 2xl:text-2xl flex mt-8'>
             <h1>ETH Address: </h1>
-            <Link href={`/address/${user}`}>
+            <Link href={`/explorer/address/${user}`}>
               <h1 className='text-blue ml-1 hover:underline hover:opacity-[0.9] hover:cursor-pointer'>{user}</h1>
             </Link>
           </div>

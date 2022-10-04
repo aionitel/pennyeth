@@ -11,7 +11,7 @@ interface ResultProps {
 const Result: React.FC<ResultProps> = ({ data }) => {
   return (
     <Link href={{
-      pathname: data.type === 'Block' ? `/block/${data.hash}` : data.type === 'Address' ? `/address/${data.address}` : `/tx/${data.hash}`,
+      pathname: data.type === 'Block' ? `/explorer/block/${data.hash}` : data.type === 'Address' ? `/explorer/address/${data.address}` : `/explorer/tx/${data.hash}`,
       query: {
         ticker: data.ticker
       }

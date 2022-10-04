@@ -1,11 +1,11 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 import React from 'react'
-import AddressHeader from '../../components/explorer/address/AddressHeader';
-import AddressSummary from '../../components/explorer/address/AddressSummary';
-import Search from '../../components/explorer/Search';
-import fetchAddr from '../../data/explorer/fetchAddr';
-import { Address } from '../../data/utils/types';
+import AddressHeader from '../../../components/explorer/address/AddressHeader';
+import AddressSummary from '../../../components/explorer/address/AddressSummary';
+import Search from '../../../components/explorer/Search';
+import fetchAddr from '../../../data/explorer/fetchAddr';
+import { Address } from '../../../data/utils/types';
 
 interface AddressPageProps {
   address: Address

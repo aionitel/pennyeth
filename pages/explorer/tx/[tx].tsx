@@ -1,13 +1,12 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import fetchTx from "../../data/explorer/fetchTx";
-import TxHeader from "../../components/explorer/tx/TxHeader";
-import TxSummary from "../../components/explorer/tx/EthTxSummary";
+import fetchTx from "../../../data/explorer/fetchTx";
+import TxHeader from "../../../components/explorer/tx/TxHeader";
 import Link from "next/link";
-import Search from "../../components/explorer/Search";
-import { Tx } from '../../data/utils/types'
-import BtcTxSummary from "../../components/explorer/tx/BtcTxSummary";
-import EthTxSummary from "../../components/explorer/tx/EthTxSummary";
+import Search from "../../../components/explorer/Search";
+import { Tx } from '../../../data/utils/types'
+import BtcTxSummary from "../../../components/explorer/tx/BtcTxSummary";
+import EthTxSummary from "../../../components/explorer/tx/EthTxSummary";
 import { FaClipboard } from "react-icons/fa";
 
 interface TxPageProps {
@@ -45,7 +44,7 @@ const Tx: NextPage<TxPageProps> = ({ tx }) => {
         </div>
         <div className='flex justify-between border-b py-4'>
           <h1>Included in block:</h1>
-          <Link href={`/block/${tx.block}?ticker=${tx.ticker}`} passHref>
+          <Link href={`/explorer/block/${tx.block}?ticker=${tx.ticker}`} passHref>
             <div>
               <h1 className='text-blue hidden lg:block hover:cursor-pointer hover:underline hover:opacity-[0.9]'>{tx.ticker === 'eth' ? '0x' : null}{tx.block}</h1>
               <h1 className='text-blue block lg:hidden hover:cursor-pointer hover:underline hover:opacity-[0.9]'>{tx.ticker === 'eth' ? '0x' : null}{tx.block.slice(0, 15)}...</h1>

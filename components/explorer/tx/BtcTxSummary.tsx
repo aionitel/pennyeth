@@ -28,7 +28,7 @@ const BtcTxSummary: React.FC<BtcTxSummaryProps> = ({ tx }) => {
           {
               tx.inputs[0].output_index !== -1 ? tx.inputs.map(item => (
               <div className='flex'>
-                <Link href={`/address/${item.addresses[0]}?ticker=${tx.ticker}`} passHref>
+                <Link href={`/explorer/address/${item.addresses[0]}?ticker=${tx.ticker}`} passHref>
                   <div>
                     <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] hidden lg:block'>
                       {tx.ticker === 'eth' ? '0x' : null}{item.addresses[0]}
@@ -49,7 +49,7 @@ const BtcTxSummary: React.FC<BtcTxSummaryProps> = ({ tx }) => {
           {
             tx.outputs.map(item => (
               <div className='flex'>
-                <Link href={`/address/${item.addresses[0]}?ticker=${tx.ticker}`} passHref>
+                <Link href={`/explorer/address/${item.addresses[0]}?ticker=${tx.ticker}`} passHref>
                   <div>
                   <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] hidden lg:block'>
                     {tx.ticker === 'eth' ? '0x' : null}{item.addresses[0]}
