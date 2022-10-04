@@ -3,11 +3,11 @@ import React from 'react'
 import { ImArrowRight } from 'react-icons/im'
 import { Tx } from '../../data/utils/types'
 
-interface TxSummaryProps {
+interface EthTxSummaryProps {
   tx: Tx
 }
 
-const TxSummary: React.FC<TxSummaryProps> = ({ tx }) => {
+const EthTxSummary: React.FC<EthTxSummaryProps> = ({ tx }) => {
   return (
     <>
     <div className='mt-10 lg:ml-8 ml-4'>
@@ -15,12 +15,12 @@ const TxSummary: React.FC<TxSummaryProps> = ({ tx }) => {
     </div>
       <div className='flex text-chartGray my-5 lg:ml-8 ml-4'>
         <h1 className='text-chartGray'>Fee</h1>
-        <h1 className='ml-12 mr-1'>{tx.fees / 100000000}</h1>
+        <h1 className='ml-12 mr-1'>{tx.fees / 1000000000000000000}</h1>
         <h1>{tx.ticker.toUpperCase()}</h1>
       </div>
       <div className='flex text-chartGray lg:ml-8 ml-4 mb-5'>
         <h1>Total</h1>
-        <h1 className='ml-8'>{tx.total / 100000000 } {tx.ticker.toUpperCase()}</h1>
+        <h1 className='ml-8'>{tx.total / 1000000000000000000 } {tx.ticker.toUpperCase()}</h1>
       </div>
       <div className='flex-row lg:flex justify-between text-white lg:ml-8 ml-4'>
         <div className='flex'>
@@ -38,7 +38,7 @@ const TxSummary: React.FC<TxSummaryProps> = ({ tx }) => {
                     </h1>
                   </div>
                 </Link>
-                <h1>{item.output_value / 100000000}</h1>
+                <h1>{item.value}</h1>
               </div>
             ))
             : <div className="flex"><h1 className='text-green-400 mr-1'>COINBASE</h1><h1>(Newly Generated Coins)</h1></div>
@@ -56,6 +56,7 @@ const TxSummary: React.FC<TxSummaryProps> = ({ tx }) => {
                   <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] block lg:hidden'>
                     {tx.ticker === 'eth' ? '0x' : null}{item.addresses[0].slice(0, 30)}...
                   </h1>
+                  <h1 className='text-chartGray'>{item.value / 1000000000000000000} ETH</h1>
                 </div>
               </Link>
             ))
@@ -66,4 +67,4 @@ const TxSummary: React.FC<TxSummaryProps> = ({ tx }) => {
   )
 }
 
-export default TxSummary
+export default EthTxSummary;

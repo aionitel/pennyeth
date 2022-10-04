@@ -2,10 +2,12 @@ import { NextPage } from "next";
 import Head from "next/head";
 import fetchTx from "../../data/explorer/fetchTx";
 import TxHeader from "../../components/explorer/TxHeader";
-import TxSummary from "../../components/explorer/TxSummary";
+import TxSummary from "../../components/explorer/EthTxSummary";
 import Link from "next/link";
 import Search from "../../components/explorer/Search";
 import { Tx } from '../../data/utils/types'
+import BtcTxSummary from "../../components/explorer/BtcTxSummary";
+import EthTxSummary from "../../components/explorer/EthTxSummary";
 
 interface TxPageProps {
   tx: Tx
@@ -13,13 +15,13 @@ interface TxPageProps {
 
 const Tx: NextPage<TxPageProps> = ({ tx }) => {
   return (
-    <div className='w-screen h-screen lg:max-w-screen-lg 2xl:max-w-screen-xl'>
+    <div className='w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl mb-20 pb-20'>
       <Head>
         <title>PennyETH • Transaction {tx.ticker === 'eth' ? '0x' : null}{tx.hash}</title>
       </Head>
         <div className='mt-8 lg:ml-8 mx-4 text-black'><Search /></div>
         <TxHeader tx={tx} />
-        <TxSummary tx={tx} />
+        {tx.ticker === 'btc' ? <BtcTxSummary tx={tx} /> : <EthTxSummary tx={tx} />}
       <div className='mt-10 lg:ml-8 ml-4'>
         <h1 className='text-white text-3xl'>Details</h1>
       </div>
