@@ -66,8 +66,8 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
             <h1>Hash</h1>
             <div className='flex'>
               <h1 className='hidden lg:block mt-1'>{block.ticker === 'eth' ? '0x' : null}{block.hash}</h1>
-              <h1 className='block lg:hidden'>{block.ticker === 'eth' ? '0x' : null}{block.hash.slice(0, 35)}...</h1>
-              <FaClipboard className='ml-2 mt-2 hover:text-blue hover:cursor-pointer' onClick={() => {
+              <h1 className='block lg:hidden'>{block.ticker === 'eth' ? '0x' : null}{block.hash.slice(0, 30)}...</h1>
+              <FaClipboard className='ml-4 lg:ml-2 mt-2 hover:text-blue hover:cursor-pointer' onClick={() => {
                 navigator.clipboard.writeText(block.hash as string);
               }} />
             </div>
@@ -103,7 +103,7 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
             </Link>
           </div>
         </div>
-      <div className='my-8 hidden lg:block'>
+      <div className='my-8'>
         <div className='flex'>
           <h1 className='text-3xl text-white'>Block Transactions</h1>
           <BsFillInfoCircleFill data-tip={<h1></h1>} className='mt-3 mx-2 text-lightgray' />
@@ -114,7 +114,10 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
         {
           block.txs.map(item => (
             <Link href={`/tx/${item}?ticker=${block.ticker}`} passHref key=''>
-              <h1 className='my-4 text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline'>{block.ticker === 'eth' ? '0x' : null}{item}</h1>
+              <>
+                <h1 className='my-4 text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline hidden lg:block'>{block.ticker === 'eth' ? '0x' : null}{item}</h1>
+                <h1 className='my-4 text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline block lg:hidden'>{block.ticker === 'eth' ? '0x' : null}{item.slice(0, 30)}...</h1>
+              </>
             </Link>
           ))
         }
