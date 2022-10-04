@@ -6,6 +6,7 @@ import { BsFillInfoCircleFill } from 'react-icons/bs'
 import ReactTooltip from 'react-tooltip';
 import Search from '../../components/explorer/Search';
 import Link from 'next/link';
+import { FaClipboard } from 'react-icons/fa'
 
 interface Block {
   type: string;
@@ -63,8 +64,13 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
         <div className='flex-row text-center lg:text-left'>
           <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Hash</h1>
-            <h1 className='hidden lg:block'>{block.ticker === 'eth' ? '0x' : null}{block.hash}</h1>
-            <h1 className='block lg:hidden'>{block.ticker === 'eth' ? '0x' : null}{block.hash.slice(0, 35)}...</h1>
+            <div className='flex'>
+              <h1 className='hidden lg:block mt-1'>{block.ticker === 'eth' ? '0x' : null}{block.hash}</h1>
+              <h1 className='block lg:hidden'>{block.ticker === 'eth' ? '0x' : null}{block.hash.slice(0, 35)}...</h1>
+              <FaClipboard className='ml-2 mt-2 hover:text-blue hover:cursor-pointer' onClick={() => {
+                navigator.clipboard.writeText(block.hash as string);
+              }} />
+            </div>
           </div>
           <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Height</h1>
