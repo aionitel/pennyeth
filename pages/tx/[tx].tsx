@@ -8,6 +8,7 @@ import Search from "../../components/explorer/Search";
 import { Tx } from '../../data/utils/types'
 import BtcTxSummary from "../../components/explorer/tx/BtcTxSummary";
 import EthTxSummary from "../../components/explorer/tx/EthTxSummary";
+import { FaClipboard } from "react-icons/fa";
 
 interface TxPageProps {
   tx: Tx
@@ -28,8 +29,13 @@ const Tx: NextPage<TxPageProps> = ({ tx }) => {
       <div className='flex-row text-chartGray lg:mx-0 lg:ml-8 mx-5'>
         <div className='flex justify-between border-b py-4'>
           <h1>Hash</h1>
-          <h1 className='hidden lg:block'>{tx.ticker === 'eth' ? '0x' : null}{tx.hash}</h1>
-          <h1 className='block lg:hidden'>{tx.ticker === 'eth' ? '0x' : null}{tx.hash.slice(0, 25)}...</h1>
+          <div className="flex">
+            <h1 className='hidden lg:block'>{tx.ticker === 'eth' ? '0x' : null}{tx.hash}</h1>
+            <h1 className='block lg:hidden'>{tx.ticker === 'eth' ? '0x' : null}{tx.hash.slice(0, 25)}...</h1>
+            <FaClipboard className='ml-2 mt-1 hover:text-blue hover:cursor-pointer' onClick={() => {
+                navigator.clipboard.writeText(tx.hash as string);
+              }} />
+          </div>
         </div>
         <div className='flex justify-between border-b py-4'>
           <h1>Status</h1>
