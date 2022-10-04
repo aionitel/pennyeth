@@ -38,7 +38,6 @@ const EthTxSummary: React.FC<EthTxSummaryProps> = ({ tx }) => {
                     </h1>
                   </div>
                 </Link>
-                <h1>{item.value}</h1>
               </div>
             ))
             : <div className="flex"><h1 className='text-green-400 mr-1'>COINBASE</h1><h1>(Newly Generated Coins)</h1></div>
@@ -48,17 +47,19 @@ const EthTxSummary: React.FC<EthTxSummaryProps> = ({ tx }) => {
         <div>
           {
             tx.outputs.map(item => (
-              <Link href={`/address/${item.addresses[0]}?ticker=${tx.ticker}`} passHref>
-                <div>
-                <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] hidden lg:block'>
-                  {tx.ticker === 'eth' ? '0x' : null}{item.addresses[0]}
-                  </h1>
-                  <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] block lg:hidden'>
-                    {tx.ticker === 'eth' ? '0x' : null}{item.addresses[0].slice(0, 30)}...
-                  </h1>
-                  <h1 className='text-chartGray'>{item.value / 1000000000000000000} ETH</h1>
-                </div>
-              </Link>
+              <div className='flex'>
+                <Link href={`/address/${item.addresses[0]}?ticker=${tx.ticker}`} passHref>
+                  <div>
+                  <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] hidden lg:block'>
+                    {tx.ticker === 'eth' ? '0x' : null}{item.addresses[0]}
+                    </h1>
+                    <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] block lg:hidden'>
+                      {tx.ticker === 'eth' ? '0x' : null}{item.addresses[0].slice(0, 30)}...
+                    </h1>
+                  </div>
+                </Link>
+                <h1 className='text-chartGray ml-2'>{item.value / 1000000000000000000} ETH</h1>
+              </div>
             ))
           }
         </div>
