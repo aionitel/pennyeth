@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react'
 import AddressHeader from '../../../components/explorer/address/AddressHeader';
 import AddressSummary from '../../../components/explorer/address/AddressSummary';
@@ -25,6 +26,16 @@ const Address: NextPage<AddressPageProps> = ({ address }) => {
         </div>
         <AddressHeader address={address} />
         <AddressSummary address={address} />
+        <div>
+          <h1 className='text-white text-3xl ml-8'>Transactions</h1>
+        </div>
+        <div className='ml-8'>
+          {address.txs.map(item => (
+            <Link href={`/explorer/tx/${item.tx_hash}?ticker=${address.ticker}`} passHref>
+              <h1 className='text-blue hover:underline hover:opacity-[0.9] hover:cursor-pointer my-4' key=''>{item.tx_hash}</h1>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   )

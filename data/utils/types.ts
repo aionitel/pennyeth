@@ -20,7 +20,7 @@ export interface Address {
   totalSent: number;
   balance: number,
   n_txs: number;
-  txs: string[]; // list of tx hashes belonging to address
+  txs: any[]; // list of tx hashes belonging to address
 }
 
 export interface Block {
