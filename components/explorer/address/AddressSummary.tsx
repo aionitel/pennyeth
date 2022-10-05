@@ -15,7 +15,7 @@ const AddressSummary: React.FC<AddressSummaryProps> = ({ address }) => {
 
   return (
     <div className='lg:flex justify-center flex-row my-10'>
-      <div className='border-2 border-almostBlack rounded p-8 lg:mr-20'>
+      <div className='lg:border-2 border-almostBlack rounded p-8 lg:mr-20'>
         <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${address.address}`} width={200} />
       </div>
       <div className='text-chartGray flex-row justify-between mt-5'>
