@@ -6,8 +6,10 @@ import { images } from '../../data/images/images';
 import { BiCoin } from 'react-icons/bi'
 import fetchAllAssets from '../../data/prices/metric/fetchAllAssets';
 import fetchDailyAsset from '../../data/prices/time/fetchDailyAsset';
+import { useTheme } from 'next-themes'
 
 const Logo = () => {
+  const { setTheme } = useTheme();
   const [currWeeklyBtc, setCurrWeeklyBtc] = useRecoilState(weeklyBtcAtom);
   const [newsArticles, setNewsArticles] = useRecoilState(newsAtom);
   const [allAssets, setAllAssets] = useRecoilState(allAssetsAtom);
