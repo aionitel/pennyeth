@@ -17,7 +17,7 @@ export const images = [
 export const logos = {
   "BTC": 'https://i.imgur.com/wbZ6UVD.png', // bitcoin
   "ETH": 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Fethereum-png-12.png&f=1&nofb=1', // ethereum
-  "XMR": 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwiki.trezor.io%2Fimages%2FMonero.png&f=1&nofb=1', // monero
+  "XMR": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-download.com%2Fwp-content%2Fuploads%2F2018%2F05%2FMonero_logo_colour.png&f=1&nofb=1&ipt=11df0767e531bdb4d620d88dd7f3fdc7b2337e550cf3cf3231bcba2f878de70a&ipo=images",
   "SOL": 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyourcryptolibrary.com%2Fwp-content%2Fuploads%2F2021%2F05%2Fsolana-sol-logo.png&f=1&nofb=1', // solana
   "ADA": 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ficons-for-free.com%2Ficonfiles%2Fpng%2F512%2Fcardano%2Bicon-1320162855683510157.png&f=1&nofb=1', // cardano
   "BCH": 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.bytefederal.com%2Fwp-content%2Fuploads%2F2021%2F03%2Fbitcoin-cash-bch-logo-1536x1536.png&f=1&nofb=1', // bitcoin cash
