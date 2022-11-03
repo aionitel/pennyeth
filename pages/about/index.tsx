@@ -7,7 +7,7 @@ const About = () => {
       <Head>
         <title>PennyETH  •  About</title>
       </Head>
-      <div className='w-screen text-center lg:text-left text-white lg:m-10 lg:max-w-screen-lg'>
+      <div className='w-screen text-center lg:text-left text-white  lg:max-w-screen-lg'>
         <div>
           <h1 className='text-5xl'>What is PennyETH?</h1>
           <p className='text-lg text-chartGray my-7'>

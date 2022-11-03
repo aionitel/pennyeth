@@ -1,36 +1,68 @@
-import React from 'react'
-import { BiCoin as CoinIcon } from 'react-icons/bi'
-import MobileNavModal from './MobileNavModal'
+import { RiBarChartHorizontalLine } from 'react-icons/ri'
 import Link from 'next/link'
+import { BiCoin } from 'react-icons/bi'
 
-const MobileNavBar: React.FC = () => { // mainly top of screen, with three bars, logo, and name
+// toggle mobile navbar
+if (typeof window === 'object') {
+  const btn = document.querySelector('button.mobile-menu-button')
+  const menu = document.querySelector('.mobile-menu')
+  
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle("hidden")
+  })
+
+  window.onload = () => { // hiding mobile navbar on reload
+    menu?.classList.toggle("hidden") 
+  }
+}
+
+export const Navbar: React.FC = () => {
   return (
-    <nav 
-      className='
-        lg:hidden 
-        flex 
-        justify-between 
-        px-2
-        py-8
-        h-30
-        bg-black 
-        border-lightgray 
-        text-white
-        text-4xl
-        sticky
-        top-0
-        z-[1000]
-        '
-    >
-      <MobileNavModal />
-      <Link href='/' passHref>
-        <h1 className='text-2xl hover:cursor-pointer'>PennyETH</h1>
-      </Link>
-      <Link href='/' passHref>
-        <CoinIcon />
-      </Link>
+    <nav className="py-6 sticky top-0 z-[1000] lg:hidden block bg-black">
+      <div className="flex justify-between text-white">
+        <div className="flex align-center justify-between lg:order-2">
+          <button type="button" className="sm:transition-all mobile-menu-button inline-flex text-5xl items-center mr-4 sm:hover:scale-110 hover:cursor-pointer ml-6 rounded-lg lg:hidden hover" aria-controls="mobile-menu-2" aria-expanded="false">
+            <RiBarChartHorizontalLine />
+          </button>
+        </div>
+        <div className='text-2xl mt-2'>
+          <h1>PennyETH</h1>
+        </div>
+        <div className='text-5xl'>
+          <Link href='/' passHref>
+            <BiCoin />
+          </Link>
+        </div>
+      </div>
+      <div className='mobile-menu hidden'>
+        <ul className='flex-row text-center my-7 lg:hidden'>
+          <MobileNavButton name='Home' path='/' />
+          <MobileNavButton name="Assets" path='/assets' />  
+          <MobileNavButton name='Explorer' path='/explorer' />  
+          <MobileNavButton name='NFTs' path='/nfts' />  
+          <MobileNavButton name='About' path='/about' />
+        </ul>
+      </div>
     </nav>
+  );
+};
+
+interface MobileNavButtonProps {
+  name: string;
+  path: string;
+}
+
+// components for individual mobile navbar buttons
+const MobileNavButton: React.FC<MobileNavButtonProps> = ({ name, path }) => {
+  return (
+    <li className='ml-2 my-7'>
+      <div className='text-lg hover:cursor-pointer opacity-[0.7] text-white hover:underline hover:opacity-[1] lg:mr-4 hover:underline-offset-4'>
+        <Link href={path}>
+          <h1>{name}</h1>
+        </Link>
+      </div>
+    </li>
   )
 }
 
-export default MobileNavBar
+export default Navbar;

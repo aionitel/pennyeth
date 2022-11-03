@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <div className='lg:mr-20 lg:pr-20'>
+          <div >
             <div className='lgtext-3xl text-2xl lg:text-left lg:ml-6 my-8 ml-12'>
               <a href='https://bitcoin.org/bitcoin.pdf' rel="noopener noreferrer" target='_blank'>
                 <img src='https://i.imgur.com/wbZ6UVD.png' height={btcIconSize} width={btcIconSize} alt='main-btc' className='inline mb-2' />

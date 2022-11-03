@@ -19,7 +19,7 @@ const Home: NextPage = () => {
       <Head>
         <title>PennyETH  •  Assets</title>
       </Head>
-      <div className='flex bg-black mb-14'>
+      <div className='flex bg-black'>
         <motion.div 
           className='flex flex-col text-white items-center'
           exit={{ opacity:0 }}
