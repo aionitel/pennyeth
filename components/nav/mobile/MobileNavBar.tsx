@@ -1,6 +1,7 @@
 import { RiBarChartHorizontalLine } from 'react-icons/ri'
 import Link from 'next/link'
 import { BiCoin } from 'react-icons/bi'
+import { motion } from 'framer-motion'
 
 // toggle mobile navbar
 if (typeof window === 'object') {
@@ -11,12 +12,31 @@ if (typeof window === 'object') {
     menu?.classList.toggle("hidden")
   })
 
-  window.onload = () => { // hiding mobile navbar on reload
-    menu?.classList.toggle("hidden") 
+  document.onload = () => { // hiding mobile navbar on reload
+    menu?.classList.toggle("visible")
   }
+
+  menu?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden')
+  })
 }
 
 export const Navbar: React.FC = () => {
+  const sideVariants = {
+    closed: {
+      transition: {
+        staggerChildren: 0.2,
+        staggerDirection: -1
+      }
+    },
+    open: {
+      transition: {
+        staggerChildren: 0.2,
+        staggerDirection: 1
+      }
+    }
+  };
+  
   return (
     <nav className="py-6 sticky top-0 z-[1000] lg:hidden block bg-black">
       <div className="flex justify-between text-white">
@@ -34,7 +54,12 @@ export const Navbar: React.FC = () => {
           </Link>
         </div>
       </div>
-      <div className='mobile-menu hidden'>
+      <motion.div
+        initial="closed"
+        animate="open"
+        variants={sideVariants}
+        className='mobile-menu hidden'
+      >
         <ul className='flex-row text-center my-7 lg:hidden'>
           <MobileNavButton name='Home' path='/' />
           <MobileNavButton name="Assets" path='/assets' />  
@@ -42,7 +67,7 @@ export const Navbar: React.FC = () => {
           <MobileNavButton name='NFTs' path='/nfts' />  
           <MobileNavButton name='About' path='/about' />
         </ul>
-      </div>
+      </motion.div>
     </nav>
   );
 };

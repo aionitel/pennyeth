@@ -9,7 +9,7 @@ const NFTPage: NextPage = () => {
         <title>PennyETH  •  NFTs</title>
       </Head>
       <div className='h-screen bg-black'>
-        <div className='lg:mx-10 mx-2 my-8'>
+        <div className='lg:mx-10 my-8'>
           <NFTSearch />
         </div>
       </div>
