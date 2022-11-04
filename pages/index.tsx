@@ -44,8 +44,8 @@ const Home: NextPage = () => {
               <h1 className='inline'> today.</h1>
             </div>
           </div>
-          <div className='lg:flex lg:mt-4 mt-10'>
-            <HomeChart data={weeklyBtc} marginLeft={30} marginRight={0} />
+          <div className='lg:flex lg:mt-4 mt-10 '>
+            <HomeChart data={weeklyBtc} marginLeft={30} marginRight={20} />
             <div className='flex-row hidden lg:inline'>
             </div>
           </div>

@@ -54,7 +54,7 @@ const CollectionItem: React.FC<CollectionItemProps> = ({ asset }) => {
   const price_formatter = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2,      
     maximumFractionDigits: 2,
- });
+  });
 
  const compact_formtatter = new Intl.NumberFormat("en", { notation: 'compact' });
 
