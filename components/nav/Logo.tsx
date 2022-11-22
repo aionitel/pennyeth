@@ -8,55 +8,6 @@ import fetchAllAssets from '../../data/prices/metric/fetchAllAssets';
 import fetchDailyAsset from '../../data/prices/time/fetchDailyAsset';
 
 const Logo = () => {
-  const [currWeeklyBtc, setCurrWeeklyBtc] = useRecoilState(weeklyBtcAtom);
-  const [newsArticles, setNewsArticles] = useRecoilState(newsAtom);
-  const [allAssets, setAllAssets] = useRecoilState(allAssetsAtom);
-
-  const tickers = [
-    "BTC",
-    "ETH",
-    "SOL",
-    "ADA",
-    "USDT",
-    "BCH",
-    "XRP",
-    "BNB",
-    "LTC",
-    "FIL",
-    "XMR",
-    "ZEC",
-    "DASH",
-    "DOGE",
-    "SHIB",
-    "ETC",
-  ]
-
-  useEffect(() => {
-    const fetchAndSetPrices = async () => {
-
-      // fetch latest news
-      const articles = await fetchNews();
-
-      // fetch percent change in last week for btc and eth
-      const weeklyBtc = await fetchDailyAsset("btc");
-
-      // fetch all asset data for assets page
-      const allAssetData = await fetchAllAssets(tickers);
-
-      setAllAssets(allAssetData);
-
-      setCurrWeeklyBtc(weeklyBtc);
-
-      const new_articles = articles.forEach(item => {
-        item.image = images[Math.floor(Math.random() * images.length)];
-      })
-      
-      setNewsArticles(articles);
-    }
-
-    fetchAndSetPrices();
-  }, [])
-
   return (
     <div className='flex'>
       <BiCoin className='ml-5 text-4xl hover:cursor-pointer' />

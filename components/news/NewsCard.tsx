@@ -8,9 +8,9 @@ const NewsCard: React.FC<NewsArticle> = ({ title, image, date, url }) => {
   const [hover, setHover] = useState<boolean>(false);
   const [cover, setCover] = useState<string>("");
 
-  window.onload = function() {
+  if (typeof(window) !== 'undefined') {window.onload = function() {
     setCover(images[Math.floor(Math.random() * images.length)]);
-  }
+  }}
 
   return (
     <a href={url} target='_blank' rel="noopener noreferrer" onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>

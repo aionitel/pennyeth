@@ -1,27 +1,34 @@
 import { NextPage } from 'next'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import HomeChart from '../components/chart/YearChart'
 import dynamic from 'next/dynamic'
-import { useRecoilValue } from 'recoil'
-import { newsAtom, weeklyBtcAtom } from '../state/atoms'
 import MobileNewsCarousel from '../components/news/carousel/MobileNewsCarousel'
+import fetchNews from '../data/news/fetchNews'
+import fetchDailyAsset from '../data/prices/time/fetchDailyAsset'
+import fetchAllAssets from '../data/prices/metric/fetchAllAssets'
+import { useRecoilState } from 'recoil'
+import { allAssetsAtom, newsAtom, weeklyBtcAtom } from '../state/atoms'
 
 // size of bitcoin logo in header 
 const btcIconSize = 45;
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
   // dynamically import certain components that do data fetching stuff without ssr
   const DynamicNewsCarousel = dynamic(() => import('../components/news/carousel/NewsCarousel'), {ssr: false});
   const DynamicBtcText = dynamic(() => import("../components/price/BtcText"), {ssr: false});
   const DynamicCollection = dynamic(() => import("../components/collection/MiniCollection"), {ssr: false});
 
-  // get weekly timeseries btc data
-  const weeklyBtc = useRecoilValue(weeklyBtcAtom);
+  const [currWeeklyBtc, setCurrWeeklyBtc] = useRecoilState(weeklyBtcAtom);
+  const [newsArticles, setNewsArticles] = useRecoilState(newsAtom);
+  const [allAssets, setAllAssets] = useRecoilState(allAssetsAtom);
 
-  // get news data for NewsCarousel
-  const newsData = useRecoilValue(newsAtom);
+  useEffect(() => {
+    setCurrWeeklyBtc(weeklyBtc);
+    setNewsArticles(newsData);
+    setAllAssets(allAssetsData);
+  }, [])
 
   return (
     <>
@@ -61,6 +68,47 @@ const Home: NextPage = () => {
       </div>
     </>
   )
+}
+
+export async function getServerSideProps() {
+  const tickers = [
+    "BTC",
+    "ETH",
+    "SOL",
+    "ADA",
+    "USDT",
+    "BCH",
+    "XRP",
+    "BNB",
+    "LTC",
+    "FIL",
+    "XMR",
+    "ZEC",
+    "DASH",
+    "DOGE",
+    "SHIB",
+    "ETC",
+  ]
+
+  const fetchData = async () => {
+    const newsData = await fetchNews();
+    const weeklyBtc = await fetchDailyAsset("btc");
+    const allAssetsData = await fetchAllAssets(tickers);
+    
+    return {
+      newsData, weeklyBtc, allAssetsData
+    }
+  }
+
+  const { newsData, weeklyBtc, allAssetsData } = await fetchData();
+
+  return {
+    props: {
+      newsData,
+      weeklyBtc,
+      allAssetsData
+    }
+  }
 }
 
 export default Home;
