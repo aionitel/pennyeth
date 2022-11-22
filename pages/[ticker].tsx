@@ -2,50 +2,19 @@ import { NextPage } from 'next'
 import Head from 'next/head';
 import { useState } from 'react';
 import AssetHeader from '../components/asset/AssetHeader';
-import YearChart from '../components/chart/YearChart';
 import fetchAsset from '../data/prices/metric/fetchAsset';
-import fetchDailyAsset from '../data/prices/time/fetchDailyAsset';
-import { MdOutlineClose } from 'react-icons/md'
-
-interface Asset {
-  name: string,
-  ticker: string,
-  image: string,
-  price: number,
-  dailyChange: number,
-  volume: number,
-  marketCap: number,
-  marketDominance: number,
-  supply: number,
-  rank: number,
-  stockToFlow: number,
-  medianTxFee: number,
-  allTimeHigh: number,
-  hashRate: number,
-  overview: string,
-  desc: string,
-  background: string,
-  blockReward: number,
-  consensusAlgorithm: string,
-}
+import { Asset } from '../data/utils/types';
 
 interface AssetPageProps {
   asset: Asset;
-  weeklyAsset: any
 }
 
-const allowedChart = [
-  "BTC",
-  "ADA",
-  "USDT",
-  "XRP",
-  "XMR",
-  "DOGE",
-]
+// main asset page
 
-const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
-  const [textOpen, setTextOpen] = useState<boolean>(false);
+const AssetPage: NextPage<AssetPageProps> = ({ asset }) => {
+  const [textOpen, setTextOpen] = useState<boolean>(false); // keeping track if user enlarged text passage or not
 
+  // price formatter
   const formatter = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2,      
     maximumFractionDigits: 2,
@@ -54,9 +23,6 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
   return (
     <div 
       className='lg:pt-10 pt-4 w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl'
-      style={{
-        height: allowedChart.includes(asset.ticker) ? null : '100vh'
-      }}
     >
       <Head>
         <title>PennyETH • {asset.name}</title>
@@ -65,9 +31,6 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
         <div className='lg:mb-10 mb-10'>
           <AssetHeader asset={asset} />
         </div>
-        {
-          allowedChart.includes(asset.ticker) ? <YearChart data={weeklyAsset} marginLeft={25} marginRight={0} /> : null
-        }
         {
           asset.consensusAlgorithm ? 
             <div className='flex ml-6 text-xl mb-6 mt-4'>
@@ -143,12 +106,10 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset, weeklyAsset }) => {
 export async function getServerSideProps(context) {
   const ticker = context.params.ticker as string;
   const asset = await fetchAsset(ticker);
-  const weeklyAsset = await fetchDailyAsset(ticker);
 
   return {
     props: {
-      asset,
-      weeklyAsset
+      asset
     }
   }
 }
