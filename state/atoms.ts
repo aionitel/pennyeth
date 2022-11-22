@@ -47,104 +47,15 @@ export const allAssetsAtom = atom({
   key: "allAssets",
   default: [ // bs starting values
     {
-      dailyChange: 3.57456209859366,
-      image: "https://i.imgur.com/wbZ6UVD.png",
-      marketCap
-: 
-377999350649.8065,
-marketDominance
-: 
-32.76475609563796,
-name
-: 
-"Bitcoin",
-price
-: 
-19672.361584407277,
-supply
-: 
-19162337,
-ticker
-: 
-"BTC",
-volume
-: 
-16647736105.544996
-    },
-    {
-      dailyChange: 3.57456209859366,
-      image: "https://i.imgur.com/wbZ6UVD.png",
-      marketCap
-: 
-377999350649.8065,
-marketDominance
-: 
-32.76475609563796,
-name
-: 
-"Bitcoin",
-price
-: 
-19672.361584407277,
-supply
-: 
-19162337,
-ticker
-: 
-"BTC",
-volume
-: 
-16647736105.544996
-    },
-    {
-      dailyChange: 3.57456209859366,
-      image: "https://i.imgur.com/wbZ6UVD.png",
-      marketCap
-: 
-377999350649.8065,
-marketDominance
-: 
-32.76475609563796,
-name
-: 
-"Bitcoin",
-price
-: 
-19672.361584407277,
-supply
-: 
-19162337,
-ticker
-: 
-"BTC",
-volume
-: 
-16647736105.544996
-    },
-    {
-      dailyChange: 3.57456209859366,
-      image: "https://i.imgur.com/wbZ6UVD.png",
-      marketCap
-: 
-377999350649.8065,
-marketDominance
-: 
-32.76475609563796,
-name
-: 
-"Bitcoin",
-price
-: 
-19672.361584407277,
-supply
-: 
-19162337,
-ticker
-: 
-"BTC",
-volume
-: 
-16647736105.544996
+      dailyChange: "Loading...",
+      image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages-wixmp-ed30a86b8c4ca887773594c2.wixmp.com%2Ff%2Fe596a334-ec86-4a84-96df-17900077efc2%2Fd7gwtxy-a0648d53-d900-425d-85e4-96fdeb5e7968.gif%3Ftoken%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U1OTZhMzM0LWVjODYtNGE4NC05NmRmLTE3OTAwMDc3ZWZjMlwvZDdnd3R4eS1hMDY0OGQ1My1kOTAwLTQyNWQtODVlNC05NmZkZWI1ZTc5NjguZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.3MRvpWhxgH2zcoTCs1n14jxPp32J08J8Y7T6mSvyy1E&f=1&nofb=1&ipt=c56e19603a748f57c5e87a32bb9557e7d3431eef09eeec0d84a56920e64d9453&ipo=images",
+      marketCap: "Loading...",
+      marketDominance: "Loading...",
+      name: "Loading...",
+      price: "Loading...",
+      supply: "Loading...",
+      ticker: "Loading...",
+      volume: "Loading..."
     }
   ],
   effects_UNSTABLE: [persistAtom]
