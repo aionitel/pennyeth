@@ -10,8 +10,6 @@ import { FaDog } from 'react-icons/fa'
 import { FcKey } from 'react-icons/fc'
 
 const Assets: NextPage = () => {
-  const DynamicCollection = dynamic(() => import('../../components/collection/Collection'), {ssr: false});
-
   const allAssets = useRecoilValue(allAssetsAtom);
   
   return (
@@ -32,7 +30,6 @@ const Assets: NextPage = () => {
             <ListCard title='Privacy Coins' Icon={FcKey} assets={allAssets.slice(10, 13)} />
             <ListCard title="Meme Coins" Icon={FaDog} assets={allAssets.slice(13, 15)} />
           </div>
-          <DynamicCollection />
         </motion.div>
       </div>
     </div>

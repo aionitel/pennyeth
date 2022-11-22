@@ -18,7 +18,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
   // dynamically import certain components that do data fetching stuff without ssr
   const DynamicNewsCarousel = dynamic(() => import('../components/news/carousel/NewsCarousel'), {ssr: false});
   const DynamicBtcText = dynamic(() => import("../components/price/BtcText"), {ssr: false});
-  const DynamicCollection = dynamic(() => import("../components/collection/MiniCollection"), {ssr: false});
+  const DynamicMiniCollection = dynamic(() => import("../components/collection/MiniCollection"), {ssr: false});
 
   const [currWeeklyBtc, setCurrWeeklyBtc] = useRecoilState(weeklyBtcAtom);
   const [newsArticles, setNewsArticles] = useRecoilState(newsAtom);
@@ -31,7 +31,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
   }, [])
 
   return (
-    <div>
+    <>
       <Head>
         <title>PennyETH</title>
       </Head>
@@ -57,7 +57,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
             </div>
           </div>
           <div className='ml-7'>
-            <DynamicCollection />
+            <DynamicMiniCollection />
           </div>
           <div>
             <h1 className='ml-7 my-6 text-2xl'>Latest Crypto News</h1>
@@ -66,7 +66,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
           </div>
         </motion.div>
       </div>
-    </div>
+    </>
   )
 }
 
@@ -77,17 +77,6 @@ export async function getServerSideProps() {
     "SOL",
     "ADA",
     "USDT",
-    "BCH",
-    "XRP",
-    "BNB",
-    "LTC",
-    "FIL",
-    "XMR",
-    "ZEC",
-    "DASH",
-    "DOGE",
-    "SHIB",
-    "ETC",
   ]
 
   const fetchData = async () => {
