@@ -31,7 +31,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
   }, [])
 
   return (
-    <>
+    <div>
       <Head>
         <title>PennyETH</title>
       </Head>
@@ -66,7 +66,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
           </div>
         </motion.div>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -9,13 +9,13 @@ import { AiOutlineNodeIndex } from 'react-icons/ai'
 import { FaDog } from 'react-icons/fa'
 import { FcKey } from 'react-icons/fc'
 
-const Home: NextPage = () => {
+const Assets: NextPage = () => {
   const DynamicCollection = dynamic(() => import('../../components/collection/Collection'), {ssr: false});
 
   const allAssets = useRecoilValue(allAssetsAtom);
   
   return (
-    <>
+    <div>
       <Head>
         <title>PennyETH  •  Assets</title>
       </Head>
@@ -35,8 +35,8 @@ const Home: NextPage = () => {
           <DynamicCollection />
         </motion.div>
       </div>
-    </>
+    </div>
   )
 }
 
-export default Home
+export default Assets;
