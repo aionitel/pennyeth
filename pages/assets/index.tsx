@@ -15,7 +15,7 @@ const Assets: NextPage = () => {
       <Head>
         <title>PennyETH  •  Assets</title>
       </Head>
-      <div className='flex bg-black'>
+      <div className='flex bg-black h-screen'>
         <motion.div 
           className='flex flex-col text-white'
           exit={{ opacity:0 }}

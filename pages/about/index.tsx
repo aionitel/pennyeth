@@ -3,11 +3,11 @@ import Head from 'next/head'
 
 const About = () => {
   return (
-    <>
+    <div>
       <Head>
         <title>PennyETH  •  About</title>
       </Head>
-      <div className='w-screen text-center lg:text-left text-white  lg:max-w-screen-lg'>
+      <div className='w-screen text-center lg:text-left text-white lg:max-w-screen-lg h-screen m-12'>
         <div>
           <h1 className='text-5xl'>What is PennyETH?</h1>
           <p className='text-lg text-chartGray my-7'>
@@ -44,7 +44,7 @@ const About = () => {
           <h1></h1>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
