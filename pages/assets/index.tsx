@@ -1,13 +1,11 @@
 import type { NextPage } from 'next'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
-import dynamic from 'next/dynamic'
-import ListCard from '../../components/asset/ListCard'
 import { useRecoilValue } from 'recoil'
 import { allAssetsAtom } from '../../state/atoms'
 import { AiOutlineNodeIndex } from 'react-icons/ai'
-import { FaDog } from 'react-icons/fa'
-import { FcKey } from 'react-icons/fc'
+import AssetSearch from '../../components/asset/AssetSearch'
+import TickerCard from '../../components/asset/TickerCard'
 
 const Assets: NextPage = () => {
   const allAssets = useRecoilValue(allAssetsAtom);
@@ -19,16 +17,14 @@ const Assets: NextPage = () => {
       </Head>
       <div className='flex bg-black'>
         <motion.div 
-          className='flex flex-col text-white items-center'
+          className='flex flex-col text-white'
           exit={{ opacity:0 }}
           initial={{ opacity:0 }}
           animate={{ opacity:1 }}
           transition={{ duration: 1 }}
         >
-          <div className='lg:flex my-7'>
-            <ListCard title='DeFi Projects' Icon={AiOutlineNodeIndex} assets={allAssets.slice(1, 4)} />
-            <ListCard title='Privacy Coins' Icon={FcKey} assets={allAssets.slice(10, 13)} />
-            <ListCard title="Meme Coins" Icon={FaDog} assets={allAssets.slice(13, 15)} />
+          <div className='lg:ml-10 my-8'>
+            <AssetSearch />
           </div>
         </motion.div>
       </div>

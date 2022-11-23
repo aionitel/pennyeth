@@ -25,7 +25,7 @@ const MiniCollection: React.FC = () => {
       </div>
       {
         assets.map(item => (
-          <div key='' className='hover:cursor-pointer hover:bg-almostBlack'>
+          <div key='' className='hover:cursor-pointer hover:bg-almostBlack transition-all duration-300'>
             <MiniCollectionItem
               asset={item}
             />

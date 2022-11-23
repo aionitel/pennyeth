@@ -11,7 +11,7 @@ const AssetSearch: React.FC = () => {
   return (
     <form method='GET' className='flex' action={`/${asset}`} >
       <input
-        className='max-w-screen-xs lg:max-w-screen-lg w-screen rounded-md pl-3 py-2 text-black'
+        className='w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl rounded-md pl-3 py-2 text-black'
         type='text'
         placeholder='Search Asset (Name or Ticker, eg. "Bitcoin")'
         onChange={handleChange}

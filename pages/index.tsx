@@ -90,7 +90,7 @@ export async function getServerSideProps() {
   }
 
   const { newsData, weeklyBtc, allAssetsData } = await fetchData();
-
+  
   return {
     props: {
       newsData,

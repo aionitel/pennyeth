@@ -2,6 +2,7 @@ import { NextPage } from 'next'
 import Head from 'next/head';
 import { useState } from 'react';
 import AssetHeader from '../components/asset/AssetHeader';
+import AssetSearch from '../components/asset/AssetSearch';
 import fetchAsset from '../data/prices/metric/fetchAsset';
 import { Asset } from '../data/utils/types';
 
@@ -22,12 +23,15 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset }) => {
 
   return (
     <div 
-      className='lg:pt-10 pt-4 w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl'
+      className='lg:pt-10 pt-4 w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl lg:ml-7'
     >
       <Head>
         <title>PennyETH • {asset.name}</title>
       </Head>
       <div className='text-white'>
+        <div>
+          <AssetSearch />
+        </div>
         <div className='lg:mb-10 mb-10'>
           <AssetHeader asset={asset} />
         </div>
