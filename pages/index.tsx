@@ -11,9 +11,6 @@ import fetchAllAssets from '../data/prices/metric/fetchAllAssets'
 import { useRecoilState } from 'recoil'
 import { allAssetsAtom, newsAtom, weeklyBtcAtom } from '../state/atoms'
 
-// size of bitcoin logo in header 
-const btcIconSize = 45;
-
 const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
   // dynamically import certain components that do data fetching stuff without ssr
   const DynamicNewsCarousel = dynamic(() => import('../components/news/carousel/NewsCarousel'), {ssr: false});
@@ -31,7 +28,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
   }, [])
 
   return (
-    <>
+    <div>
       <Head>
         <title>PennyETH</title>
       </Head>
@@ -44,7 +41,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
           <div >
             <div className='lgtext-3xl text-2xl lg:text-left lg:ml-6 my-8 ml-12'>
               <a href='https://bitcoin.org/bitcoin.pdf' rel="noopener noreferrer" target='_blank'>
-                <img src='https://i.imgur.com/wbZ6UVD.png' height={btcIconSize} width={btcIconSize} alt='main-btc' className='inline mb-2' />
+                <img src='https://i.imgur.com/wbZ6UVD.png' alt='main-btc' className='inline mb-2 w-14 h-14' />
               </a>
               <h1 className='inline mx-2'>is</h1>
               <DynamicBtcText />
@@ -66,7 +63,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
           </div>
         </motion.div>
       </div>
-    </>
+    </div>
   )
 }
 

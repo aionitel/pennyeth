@@ -37,7 +37,7 @@ const ConnectWallet: React.FC = () => {
   }
 
   return (
-    <>
+    <div>
       <motion.div
       >
         <div className='flex items-center'>
@@ -57,7 +57,7 @@ const ConnectWallet: React.FC = () => {
           </ReactTooltip>
         </div>
       </motion.div>
-    </>
+    </div>
   )
 }
 

@@ -25,11 +25,11 @@ const Assets: NextPage = () => {
           <div className='lg:ml-10 my-8'>
             <AssetSearch />
           </div>
-          <div className='ml-10'>
+          <div className='lg:ml-10 mx-5'>
             <h1 className='text-4xl my-4'>Top Assets</h1>
             <div>
               {allAssets.slice(0, 3).map((asset) => (
-                <div key=''>
+                <div key='' className='my-8'>
                   <AssetCard asset={asset} />
                 </div>
               ))}
