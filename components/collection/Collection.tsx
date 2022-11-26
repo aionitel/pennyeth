@@ -6,7 +6,7 @@ import { allAssetsAtom } from '../../state/atoms'
 import Link from 'next/link'
 import { Asset } from '../../data/utils/types'
 
-const MiniCollection: React.FC = () => {
+const Collection: React.FC = () => {
   const allAssets = useRecoilValue(allAssetsAtom);
   const assets = allAssets.slice(0, 5);
 
@@ -26,7 +26,7 @@ const MiniCollection: React.FC = () => {
       {
         assets.map(item => (
           <div key='' className='hover:cursor-pointer hover:bg-almostBlack transition-all duration-300'>
-            <MiniCollectionItem
+            <CollectionItem
               asset={item}
             />
           </div>
@@ -40,7 +40,7 @@ interface CollectionProps {
   asset: Asset
 }
 
-const MiniCollectionItem: React.FC<CollectionProps> = ({ asset }) => {
+const CollectionItem: React.FC<CollectionProps> = ({ asset }) => {
   const logoSize = 30;
 
   const price_formatter = new Intl.NumberFormat('en-US', {
@@ -74,4 +74,4 @@ const MiniCollectionItem: React.FC<CollectionProps> = ({ asset }) => {
   )
 }
 
-export default MiniCollection;
+export default Collection;

@@ -18,7 +18,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
   // dynamically import certain components that do data fetching stuff without ssr
   const DynamicNewsCarousel = dynamic(() => import('../components/news/carousel/NewsCarousel'), {ssr: false});
   const DynamicBtcText = dynamic(() => import("../components/price/BtcText"), {ssr: false});
-  const DynamicMiniCollection = dynamic(() => import("../components/collection/MiniCollection"), {ssr: false});
+  const DynamicCollection = dynamic(() => import("../components/collection/Collection"), {ssr: false});
 
   const [currWeeklyBtc, setCurrWeeklyBtc] = useRecoilState(weeklyBtcAtom);
   const [newsArticles, setNewsArticles] = useRecoilState(newsAtom);
@@ -57,7 +57,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
             </div>
           </div>
           <div className='ml-7'>
-            <DynamicMiniCollection />
+            <DynamicCollection />
           </div>
           <div>
             <h1 className='ml-7 my-6 text-2xl'>Latest Crypto News</h1>
