@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { NextPage } from 'next'
-import NFTSearch from '../../components/nft/NFTSearch'
+import Search from '../../components/search/Search'
 
 const NFTPage: NextPage = () => {
   return (
@@ -10,7 +10,7 @@ const NFTPage: NextPage = () => {
       </Head>
       <div className='h-screen bg-black'>
         <div className='lg:mx-10 my-8'>
-          <NFTSearch />
+          <Search path='/nfts/' placeholder='Search NFTs' />
         </div>
       </div>
     </>

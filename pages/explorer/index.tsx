@@ -11,7 +11,7 @@ const Explorer: NextPage = () => {
       </Head>
       <div className='text-white h-screen'>
         <div className='lg:ml-10 my-8 text-black'>
-          <Search path='/explorer' placeholder='Search Block / Address / Transaction' />
+          <Search path='/explorer/' placeholder='Search Block / Address / Transaction' />
         </div>
       </div>
     </div>

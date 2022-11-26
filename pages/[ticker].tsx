@@ -2,9 +2,9 @@ import { NextPage } from 'next'
 import Head from 'next/head';
 import { useState } from 'react';
 import AssetHeader from '../components/asset/AssetHeader';
-import AssetSearch from '../components/asset/AssetSearch';
 import fetchAsset from '../data/prices/metric/fetchAsset';
 import { Asset } from '../data/utils/types';
+import Search from '../components/search/Search';
 
 interface AssetPageProps {
   asset: Asset;
@@ -30,7 +30,7 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset }) => {
       </Head>
       <div className='text-white'>
         <div>
-          <AssetSearch />
+          <Search path='/' placeholder='Search Name or Ticker e.g. "Bitcoin"' />
         </div>
         <div className='lg:mb-10 mb-10'>
           <AssetHeader asset={asset} />

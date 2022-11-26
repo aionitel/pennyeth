@@ -2,9 +2,9 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react'
 import NFTCard from '../../components/nft/NFTCard';
-import NFTSearch from '../../components/nft/NFTSearch';
 import fetchNFT from '../../data/nft/fetchNFT';
 import { NFT } from '../../data/utils/types';
+import Search from '../../components/search/Search';
 
 interface NFTSPageProps {
   nfts: NFT[]
@@ -19,7 +19,7 @@ const NFTS: React.FC<NFTSPageProps> = ({ nfts }) => {
         <title>PennyETH • NFT Results</title>
       </Head>
       <div className='lg:m-8 mx-2 my-6'>
-        <NFTSearch />
+        <Search path='/nft/' placeholder='Search NFTs' />
       </div>
       <h1 className='text-white text-xl lg:text-3xl text-center lg:mr-20 mb-8'>Your search for "{router.query.nfts}" yielded {nfts.length} results.</h1>
       <div className='flex flex-wrap justify-center lg:justify-start lg:ml-7'>

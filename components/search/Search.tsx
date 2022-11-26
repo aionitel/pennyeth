@@ -14,9 +14,9 @@ const Search: React.FC<SearchProps> = ({ path, placeholder }) => {
   }
 
   return (
-    <form method='GET' className='flex' action={`${path}/${query}`} >
+    <form method='GET' className='flex' action={`${path}${query}`} >
       <input
-        className='w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl rounded-md pl-3 py-2'
+        className='w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl rounded-md pl-3 py-2 text-black'
         type='text'
         placeholder={placeholder}
         onChange={handleChange}

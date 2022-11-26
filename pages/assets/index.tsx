@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 import Head from 'next/head'
 import { useRecoilValue } from 'recoil'
 import { allAssetsAtom } from '../../state/atoms'
-import AssetSearch from '../../components/asset/AssetSearch'
 import AssetCard from '../../components/asset/AssetCard'
+import Search from '../../components/search/Search'
 
 const Assets: NextPage = () => {
   const allAssets = useRecoilValue(allAssetsAtom);
@@ -23,7 +23,7 @@ const Assets: NextPage = () => {
           transition={{ duration: 1 }}
         >
           <div className='lg:ml-10 my-8'>
-            <AssetSearch />
+            <Search path='/' placeholder='Search Name or Ticker e.g. "Bitcoin"' />
           </div>
           <div className='lg:ml-10 mx-5'>
             <h1 className='text-4xl my-4'>Top Assets</h1>
