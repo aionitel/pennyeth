@@ -4,9 +4,9 @@ import Link from 'next/link';
 import React from 'react'
 import AddressHeader from '../../../components/explorer/address/AddressHeader';
 import AddressSummary from '../../../components/explorer/address/AddressSummary';
-import Search from '../../../components/explorer/Search';
 import fetchAddr from '../../../data/explorer/fetchAddr';
 import { Address } from '../../../data/utils/types';
+import Search from '../../../components/search/Search';
 
 interface AddressPageProps {
   address: Address
@@ -22,7 +22,7 @@ const Address: NextPage<AddressPageProps> = ({ address }) => {
       </Head>
       <div className='w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl mb-20 pb-20'>
         <div className='lg:ml-8 mx-4 my-8'>
-          <Search />
+          <Search path='/explorer' placeholder='Search Block / Address / Transaction' />
         </div>
         <AddressHeader address={address} />
         <AddressSummary address={address} />

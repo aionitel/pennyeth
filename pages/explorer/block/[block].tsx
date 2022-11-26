@@ -4,9 +4,9 @@ import React from 'react'
 import fetchBlock from '../../../data/explorer/fetchBlock';
 import { BsFillInfoCircleFill } from 'react-icons/bs'
 import ReactTooltip from 'react-tooltip';
-import Search from '../../../components/explorer/Search';
 import Link from 'next/link';
 import { FaClipboard } from 'react-icons/fa'
+import Search from '../../../components/search/Search'
 
 interface Block {
   type: string;
@@ -35,7 +35,9 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
         }
       </Head>
       <div className='2xl:ml-10 ml-5 mr-2 lg:mr-0 text-medGray'>
-        <div className='mt-8 mr-2 lg:mr-0 text-black'><Search /></div>
+        <div className='mt-8 mr-2 lg:mr-0 text-black'>
+          <Search path='/explorer' placeholder='Search Block / Address / Transaction' />
+        </div>
         <div className='flex-row'>
           <span className='flex'>
             {

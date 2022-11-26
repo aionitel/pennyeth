@@ -3,11 +3,11 @@ import Head from "next/head";
 import fetchTx from "../../../data/explorer/fetchTx";
 import TxHeader from "../../../components/explorer/tx/TxHeader";
 import Link from "next/link";
-import Search from "../../../components/explorer/Search";
 import { Tx } from '../../../data/utils/types'
 import BtcTxSummary from "../../../components/explorer/tx/BtcTxSummary";
 import EthTxSummary from "../../../components/explorer/tx/EthTxSummary";
 import { FaClipboard } from "react-icons/fa";
+import Search from "../../../components/search/Search";
 
 interface TxPageProps {
   tx: Tx
@@ -19,7 +19,9 @@ const Tx: NextPage<TxPageProps> = ({ tx }) => {
       <Head>
         <title>PennyETH • Transaction {tx.ticker === 'eth' ? '0x' : null}{tx.hash}</title>
       </Head>
-        <div className='mt-8 lg:ml-8 mx-4 text-black'><Search /></div>
+        <div className='mt-8 lg:ml-8 mx-4 text-black'>
+          <Search path='/explorer' placeholder='Search Block / Address / Transaction' />
+        </div>
         <TxHeader tx={tx} />
         {tx.ticker === 'btc' ? <BtcTxSummary tx={tx} /> : <EthTxSummary tx={tx} />}
       <div className='mt-10 lg:ml-8 ml-4'>

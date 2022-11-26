@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 
-const Search: React.FC = () => {
+interface SearchProps {
+  path: string;
+  placeholder: string;
+}
+
+const Search: React.FC<SearchProps> = ({ path, placeholder }) => {
   const [query, setQuery] = useState<string>("");
 
   const handleChange = (e) => {
@@ -9,11 +14,11 @@ const Search: React.FC = () => {
   }
 
   return (
-    <form method='GET' className='flex' action={`/explorer/${query}`} >
+    <form method='GET' className='flex' action={`${path}/${query}`} >
       <input
         className='w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl rounded-md pl-3 py-2'
         type='text'
-        placeholder='Search Block / Address / Transaction'
+        placeholder={placeholder}
         onChange={handleChange}
         value={query}
         spellCheck={false}
