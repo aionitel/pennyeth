@@ -79,3 +79,10 @@ export interface Asset {
   blockReward: number,
   consensusAlgorithm: string,
 }
+
+export interface Chain {
+  height: number;
+  hash: string;
+  peerCount: number;
+  uncofirmedCount: number;
+}

@@ -3,7 +3,7 @@ import { IconType } from 'react-icons'
 import { GiTwoCoins } from 'react-icons/gi' 
 import { SiHomeadvisor } from 'react-icons/si'
 import { CgSmileMouthOpen } from 'react-icons/cg'
-import { IoMdPlanet } from 'react-icons/io'
+import { FaRocket } from 'react-icons/fa'
 
 // universal navbar items (assets, about, etc...) to be used for both desktop and mobile navbars, and better modularity
 
@@ -29,7 +29,7 @@ const NavBarItemsData: NavBarItemsType[] = [
   {
     title: "Explorer",
     path: '/explorer',
-    icon: IoMdPlanet
+    icon: FaRocket
   },
   {
     title: 'NFTs',
