@@ -10,7 +10,7 @@ export const getChartWidth = () => {
 
 export const getChartHeight = () => {
   if (typeof window !== 'undefined' && screen.width <= 899) {
-    return 150
+    return 250
   } else if (typeof window !== 'undefined' && screen.width <= 900 ) {
     return 300
   } else if (typeof window !== 'undefined' && screen.width <= 9999) {

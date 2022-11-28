@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { images } from '../images/images';
 
 interface NewsArticleProps {
   title: string,
@@ -13,10 +14,10 @@ const fetchNews = async () => {
   const { data: res } = await axios.get(url);
 
   // array of 10 articles fetched from api
-  const articles: NewsArticleProps[] = res.results.map(item => {
+  const articles: NewsArticleProps[] = res.results.map((item, index) => {
     return {
       title: item.title,
-      image: null,
+      image: images[index],
       date: item.pubDate,
       url: item.link
     }

@@ -14,11 +14,14 @@ const Explorer: NextPage = ({ btcChain, ethChain }: any) => {
         <div className='lg:ml-10 my-8 text-black'>
           <Search path='/explorer/' placeholder='Search Block / Address / Transaction' />
         </div>
-        <div className='flex justify-between'>
-          <div className='text-center'>
-            <h1>Bitcoin Network</h1>
+        <div className='flex-row lg:flex lg:justify-between'>
+          <div className='lg:ml-10'>
+            <div className='flex'>
+              <h1 className='text-3xl'>Bitcoin Network</h1>
+              <img src='https://i.imgur.com/wbZ6UVD.png' className='w-20 h-20' />
+            </div>
           </div>
-          <div className='border-r border-lightgray h-[600px]' />
+          <div className='border-r border-lightgray h-[600px] hidden lg:block' />
           <div>
             <h1>Ethereum Network</h1>
           </div>
