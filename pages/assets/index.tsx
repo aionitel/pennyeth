@@ -1,14 +1,11 @@
 import type { NextPage } from 'next'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
-import { useRecoilValue } from 'recoil'
-import { allAssetsAtom } from '../../state/atoms'
 import AssetCard from '../../components/asset/AssetCard'
 import Search from '../../components/search/Search'
+import fetchAllAssets from '../../data/prices/metric/fetchAllAssets'
 
-const Assets: NextPage = () => {
-  const allAssets = useRecoilValue(allAssetsAtom);
-  
+const Assets: NextPage = ({ allAssets }: any) => {
   return (
     <div>
       <Head>
@@ -49,6 +46,29 @@ const Assets: NextPage = () => {
       </div>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  const fetchData = async () => {
+    const tickers = [
+      "BTC",
+      'ETH',
+      'ADA',
+      'XRP',
+    ]
+  
+    const allAssets = fetchAllAssets(tickers);
+
+    return allAssets;
+  }
+
+  const allAssets = await fetchData();
+
+  return {
+    props: {
+      allAssets
+    }
+  }
 }
 
 export default Assets;

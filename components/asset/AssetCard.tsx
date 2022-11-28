@@ -22,7 +22,7 @@ const AssetCard: React.FC<TickerCardProps> = ({ asset }) => {
           {
             asset.dailyChange < 0 
             ? <div className='flex'>
-                <RiArrowDownSFill className='text-red-500 mt-2' />
+                <RiArrowDownSFill className='text-red-500 mt-1 text-red' />
                 <h1 className='text-red'>{asset.dailyChange.toFixed(2)}%</h1>
               </div>
             : <div className='flex'>
