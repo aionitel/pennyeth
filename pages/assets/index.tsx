@@ -23,10 +23,10 @@ const Assets: NextPage = ({ allAssets }: any) => {
             <Search path='/' placeholder='Search Name or Ticker e.g. "Bitcoin"' />
           </div>
           <div className='lg:ml-10 mx-5'>
-            <h1 className='text-4xl my-4'>Top Assets</h1>
+            <h1 className='text-4xl my-4'>Top Bitcoins</h1>
             <div>
               {
-                allAssets.slice(0, 3).map((asset, index) => (
+                allAssets.slice(0, 3).map(asset => (
                   <div key='' className='my-8'>
                     <AssetCard asset={asset} />
                   </div>
@@ -35,11 +35,11 @@ const Assets: NextPage = ({ allAssets }: any) => {
             </div>
             <h1 className='text-4xl my-10'>Trending Assets</h1>
             <div className='mb-20'>
-              <AssetCard asset={allAssets[1]} />
+              <AssetCard asset={allAssets[0]} />
               <div className='my-8'>
                 <AssetCard asset={allAssets[3]} />
               </div>
-              <AssetCard asset={allAssets[2]} />
+              <AssetCard asset={allAssets[1]} />
             </div>
           </div>
         </motion.div>
@@ -52,9 +52,9 @@ export async function getServerSideProps() {
   const fetchData = async () => {
     const tickers = [
       "BTC",
-      'ETH',
-      'ADA',
-      'XRP',
+      "BCH",
+      "BSV",
+      "XRP",
     ]
   
     const allAssets = fetchAllAssets(tickers);
