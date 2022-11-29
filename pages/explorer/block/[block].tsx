@@ -36,7 +36,7 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
       </Head>
       <div className='2xl:ml-10 ml-5 mr-2 lg:mr-0 text-medGray'>
         <div className='mt-8 mr-2 lg:mr-0 text-black'>
-          <Search path='/explorer' placeholder='Search Block / Address / Transaction' />
+          <Search path='/explorer/' placeholder='Search Block / Address / Transaction' />
         </div>
         <div className='flex-row'>
           <span className='flex'>

@@ -50,10 +50,10 @@ const EthTxSummary: React.FC<EthTxSummaryProps> = ({ tx }) => {
               <div className='flex'>
                 <Link href={`/explorer/address/${item.addresses[0]}?ticker=${tx.ticker}`} passHref>
                   <div>
-                  <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] hidden lg:block'>
+                  <h1 key='' className='text-blue hover:cursor-pointer hover:underline underline-offset-2 hover:opacity-[0.9] hidden lg:block'>
                     {tx.ticker === 'eth' ? '0x' : null}{item.addresses[0]}
                     </h1>
-                    <h1 key='' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] block lg:hidden'>
+                    <h1 key='' className='text-blue hover:cursor-pointer hover:underline underline-offset-2 hover:opacity-[0.9] block lg:hidden'>
                       {tx.ticker === 'eth' ? '0x' : null}{item.addresses[0].slice(0, 30)}...
                     </h1>
                   </div>

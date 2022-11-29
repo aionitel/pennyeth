@@ -23,7 +23,7 @@ const Explorer: NextPage = ({ btcChain, ethChain }: any) => {
                 <h1>Latest Height</h1>
                 <h1>{btcChain.height.toLocaleString()}</h1>
               </div>
-              <div className='flex justify-between my-8 border-b pb-4 border-chartGray'>
+              <div className='flex justify-between my-8 border-b pb-6 border-chartGray'>
                 <h1>Latest Block Hash</h1>
                 <Link href={`/explorer/block/${btcChain.hash}?ticker=btc`} passHref>
                   <div>
@@ -36,11 +36,11 @@ const Explorer: NextPage = ({ btcChain, ethChain }: any) => {
                 <h1 className='mt-1.5'>Latest Peer Count</h1>
                 <div className='flex-row'>
                   <div className='flex'>
-                    <h1>Confirmed</h1>
+                    <h1 className='text-green-400 mr-1.5'>Confirmed</h1>
                     <h1>{btcChain.peerCount}</h1>
                   </div>
                   <div className='flex'>
-                    <h1>Unconfirmed</h1>
+                    <h1 className='text-red mr-1.5'>Unconfirmed</h1>
                     <h1>{btcChain.uncofirmedCount}</h1>
                   </div>
                 </div>
@@ -49,17 +49,17 @@ const Explorer: NextPage = ({ btcChain, ethChain }: any) => {
           </div>
           <div>
             <h1 className='text-3xl mt-10'>Ethereum Network</h1>
-            <div className='text-chartGray lg:ml-16 lg:mr-8'>
+            <div className='text-chartGray lg:ml-16 lg:mr-8 mx-8'>
               <div className='flex justify-between my-8 border-b pb-4 border-chartGray'>
                 <h1>Latest Height</h1>
                 <h1>{ethChain.height.toLocaleString()}</h1>
               </div>
-              <div className='flex justify-between my-8 border-b pb-4 border-chartGray'>
+              <div className='flex justify-between my-8 border-b pb-6 border-chartGray'>
                 <h1>Latest Block Hash</h1>
                 <Link href={`/explorer/block/${ethChain.hash}?ticker=eth`} passHref>
                   <div>
                     <h1 className='text-blue hover:opacity-[0.9] hover:cursor-pointer hover:underline underline-offset-2 hidden lg:block'>{ethChain.hash}</h1>
-                    <h1 className='text-blue hover:opacity-[0.9] block lg:hidden'>{ethChain.hash.slice(0, 20)}...</h1>
+                    <h1 className='text-blue hover:opacity-[0.9] block lg:hidden'>{ethChain.hash.slice(0, 10)}...</h1>
                   </div>
                 </Link>
               </div>
