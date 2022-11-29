@@ -41,7 +41,7 @@ const Explorer: NextPage = ({ btcChain, ethChain }: any) => {
                   </div>
                   <div className='flex'>
                     <h1 className='text-red mr-1.5'>Unconfirmed</h1>
-                    <h1>{btcChain.uncofirmedCount}</h1>
+                    <h1>{btcChain.uncofirmedCount.toLocaleString()}</h1>
                   </div>
                 </div>
               </div>
@@ -72,7 +72,7 @@ const Explorer: NextPage = ({ btcChain, ethChain }: any) => {
                   </div>
                   <div className='flex'>
                     <h1 className='text-red mr-1.5'>Unconfirmed</h1>
-                    <h1>{ethChain.uncofirmedCount}</h1>
+                    <h1>{ethChain.uncofirmedCount.toLocaleString()}</h1>
                   </div>
                 </div>
               </div>

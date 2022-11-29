@@ -98,7 +98,7 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
           <div className='flex-row lg:flex justify-between border-b py-4'>
             <h1>Previous Block</h1>
             <Link href={`/explorer/block/${block.prevBlock}?ticker=${block.ticker}`} passHref>
-              <h1 className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-2 hidden lg:inline'>{block.ticker === 'eth' ? '0x' : null}{block.prevBlock}</h1>
+              <h1 className='text-blue hover:cursor-pointer hover:underline underline-offset-2 hover:opacity-[0.9] ml-2 hidden lg:inline'>{block.ticker === 'eth' ? '0x' : null}{block.prevBlock}</h1>
             </Link>
             <Link href={`/explorer/block/${block.prevBlock}?ticker=${block.ticker}`} passHref>
               <h1 className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-2 block lg:hidden'>{block.ticker === 'eth' ? '0x' : null}{block.prevBlock.slice(0, 35)}...</h1>
@@ -117,7 +117,7 @@ const Block: NextPage<BlockPageProps> = ({ block }) => {
           block.txs.map(item => (
             <Link href={`/explorer/tx/${item}?ticker=${block.ticker}`} passHref key=''>
               <div>
-                <h1 className='my-4 text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline hidden lg:block'>{block.ticker === 'eth' ? '0x' : null}{item}</h1>
+                <h1 className='my-4 text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline underline-offset-2 hidden lg:block'>{block.ticker === 'eth' ? '0x' : null}{item}</h1>
                 <h1 className='my-4 text-blue hover:cursor-pointer hover:opacity-[0.9] hover:underline block lg:hidden'>{block.ticker === 'eth' ? '0x' : null}{item.slice(0, 30)}...</h1>
               </div>
             </Link>

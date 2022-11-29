@@ -38,7 +38,7 @@ const About = () => {
         <div>
           <h1 className='text-5xl mb-7'>Where can I find the code for this?</h1>
           <p className='text-lg inline text-chartGray'>All the code is available on Github</p>
-          <a className='text-lg inline ml-1 text-blue hover:underline hover:opacity-[0.9]' href='https://github.com/oranges0da/pennyeth' target='__blank'>here.</a>
+          <a className='text-lg inline ml-1 text-blue hover:underline underline-offset-2 hover:opacity-[0.9]' href='https://github.com/oranges0da/pennyeth' target='__blank'>here.</a>
         </div>
         <div>
           <h1></h1>

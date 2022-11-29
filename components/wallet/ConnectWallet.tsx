@@ -19,7 +19,7 @@ const ConnectWallet: React.FC = () => {
       .catch(e => {
         addToast(
           <h1>It seems you don't have a Metamask wallet. Download Metamask
-            <a href='https://metamask.io' target='_blank' className='text-blue hover:cursor-pointer hover:underline hover:opacity-[0.9] ml-1'>here.</a>
+            <a href='https://metamask.io' target='_blank' className='text-blue hover:cursor-pointer hover:underline underline-offset-2 hover:opacity-[0.9] ml-1'>here.</a>
           </h1>, {
           appearance: 'warning',
           autoDismiss: true

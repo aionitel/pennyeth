@@ -33,7 +33,7 @@ const Address: NextPage<AddressPageProps> = ({ address }) => {
           {address.txs.map(item => (
             <Link href={`/explorer/tx/${item.tx_hash}?ticker=${address.ticker}`} passHref>
               <div>
-                <h1 className='text-blue hover:underline hover:opacity-[0.9] hover:cursor-pointer my-4 hidden lg:block' key=''>{item.tx_hash}</h1>
+                <h1 className='text-blue hover:underline underline-offset-2 hover:opacity-[0.9] hover:cursor-pointer my-4 hidden lg:block' key=''>{item.tx_hash}</h1>
                 <h1 className='text-blue hover:underline hover:opacity-[0.9] hover:cursor-pointer my-4 block lg:hidden' key=''>{item.tx_hash.slice(0, 30)}...</h1>
               </div>
             </Link>
