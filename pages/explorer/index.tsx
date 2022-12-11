@@ -16,7 +16,7 @@ const Explorer: NextPage = ({ btcChain, ethChain }: any) => {
           <Search path='/explorer/' placeholder='Search Block / Address / Transaction' />
         </div>
         <div className='flex-row text-center'>
-          <div className='lg:ml-10'>
+          <div className='lg:ml-5'>
             <h1 className='text-3xl'>Bitcoin Network</h1>
             <div className='text-chartGray mx-8'>
               <div className='flex justify-between my-8 border-b pb-4 border-chartGray'>
@@ -49,7 +49,7 @@ const Explorer: NextPage = ({ btcChain, ethChain }: any) => {
           </div>
           <div>
             <h1 className='text-3xl mt-10'>Ethereum Network</h1>
-            <div className='text-chartGray lg:ml-16 lg:mr-8 mx-8'>
+            <div className='text-chartGray lg:ml-12 lg:mr-8 mx-8'>
               <div className='flex justify-between my-8 border-b pb-4 border-chartGray'>
                 <h1>Latest Height</h1>
                 <h1>{ethChain.height.toLocaleString()}</h1>

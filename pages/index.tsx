@@ -73,7 +73,7 @@ export async function getServerSideProps() {
     "ETH",
     "SOL",
     "ADA",
-    "USDT",
+    "XRP"
   ]
 
   const fetchData = async () => {

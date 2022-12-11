@@ -32,11 +32,6 @@ const NavBarItemsData: NavBarItemsType[] = [
     icon: FaRocket
   },
   {
-    title: 'NFTs',
-    path: '/nfts',
-    icon: CgSmileMouthOpen
-  },
-  {
     title: 'About',
     path: '/about',
     icon: GiTwoCoins

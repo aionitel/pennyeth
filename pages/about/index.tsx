@@ -19,8 +19,8 @@ const About = () => {
           <h1 className='text-5xl'>How can I use PennyETH?</h1>
           <p className='text-lg text-chartGray my-7'>
             Users can view technical and price information about various cryptocurrencies.
-            PennyETH also allows users to explore Bitcoin and Ethereum's blockchain,
-            and view various NFTs and NFT collections. 
+            PennyETH also allows users to explore Bitcoin and Ethereum's blockchains, and
+            view detailed blocks, transactions, and addresses.
           </p>
         </div>
         <div>

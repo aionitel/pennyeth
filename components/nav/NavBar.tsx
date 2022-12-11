@@ -1,10 +1,8 @@
 import React from 'react'
 import NavBarItemsData from './NavItemData'
 import Link from 'next/link'
-import ConnectWallet from '../wallet/ConnectWallet'
 import { useRecoilValue } from 'recoil'
 import { userAtom } from '../../state/atoms'
-import LoggedInHeader from '../wallet/LoggedInHeader'
 import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import Logo from './Logo'
@@ -34,12 +32,6 @@ const NavBar: React.FC = () => {
           </Link>
         </motion.div>
         <DynamicCurrPriceLogos />
-        <div className='mt-10'>
-          {user ? <LoggedInHeader /> : null}
-        </div>
-        <div>
-          {user ? null : <ConnectWallet />}
-        </div>
       </div>
         {NavBarItemsData.map(item => (
           <DynamicNavItem key={1} title={item.title} path={item.path} Icon={item.icon} />
