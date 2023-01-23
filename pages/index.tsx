@@ -38,7 +38,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <div >
+          <div>
             <div className='lgtext-3xl text-2xl lg:text-left lg:ml-6 my-8 ml-12'>
               <a href='https://bitcoin.org/bitcoin.pdf' rel="noopener noreferrer" target='_blank'>
                 <img src='https://i.imgur.com/wbZ6UVD.png' alt='main-btc' className='inline mb-2 w-14 h-14' />
@@ -56,7 +56,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
           <div className='ml-7'>
             <DynamicCollection />
           </div>
-          <div>
+          <div className='my-10'>
             <h1 className='ml-7 my-6 text-2xl'>Latest Crypto News</h1>
             <MobileNewsCarousel newsData={newsData} />
             <DynamicNewsCarousel newsData={newsData} />

@@ -23,7 +23,7 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset }) => {
 
   return (
     <div 
-      className='lg:pt-10 pt-4 w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl lg:ml-7'
+      className='lg:pt-10 pt-4 w-screen lg:max-w-screen-lg 2xl:max-w-screen-xl lg:ml-7 h-screen'
     >
       <Head>
         <title>PennyETH • {asset.name}</title>
@@ -32,7 +32,7 @@ const AssetPage: NextPage<AssetPageProps> = ({ asset }) => {
         <div>
           <Search path='/' placeholder='Search Name or Ticker e.g. "Bitcoin"' />
         </div>
-        <div className='lg:mb-10 mb-10'>
+        <div className='lg:mb-10 mb-10 mt-8'>
           <AssetHeader asset={asset} />
         </div>
         {
