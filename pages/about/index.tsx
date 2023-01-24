@@ -24,12 +24,6 @@ const About = () => {
           </p>
         </div>
         <div>
-          <h1 className='text-5xl'>Can I send money using PennyETH?</h1>
-          <p className='text-lg text-chartGray my-7'>
-            Yes, you can send eth once you have connected your Ethereum wallet.
-          </p>
-        </div>
-        <div>
           <h1 className='text-5xl'>This is free, right?</h1>
           <p className='text-chartGray text-lg my-7'>
             Yes, this web app is completely free and open source. (F.O.S.S.)

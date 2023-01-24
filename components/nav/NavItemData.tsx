@@ -2,8 +2,7 @@ import { RiHandCoinLine as HandIcon } from 'react-icons/ri'
 import { IconType } from 'react-icons'
 import { GiTwoCoins } from 'react-icons/gi' 
 import { SiHomeadvisor } from 'react-icons/si'
-import { CgSmileMouthOpen } from 'react-icons/cg'
-import { FaRocket } from 'react-icons/fa'
+import { BiRocket } from 'react-icons/bi'
 
 // universal navbar items (assets, about, etc...) to be used for both desktop and mobile navbars, and better modularity
 
@@ -29,7 +28,7 @@ const NavBarItemsData: NavBarItemsType[] = [
   {
     title: "Explorer",
     path: '/explorer',
-    icon: FaRocket
+    icon: BiRocket
   },
   {
     title: 'About',
