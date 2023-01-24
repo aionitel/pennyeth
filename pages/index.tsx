@@ -17,9 +17,10 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
   const DynamicBtcText = dynamic(() => import("../components/price/BtcText"), {ssr: false});
   const DynamicCollection = dynamic(() => import("../components/collection/Collection"), {ssr: false});
 
-  const [currWeeklyBtc, setCurrWeeklyBtc] = useRecoilState(weeklyBtcAtom);
-  const [newsArticles, setNewsArticles] = useRecoilState(newsAtom);
-  const [allAssets, setAllAssets] = useRecoilState(allAssetsAtom);
+  // get important global state
+  const [currWeeklyBtc, setCurrWeeklyBtc] = useRecoilState(weeklyBtcAtom); // btc chart data for this page
+  const [newsArticles, setNewsArticles] = useRecoilState(newsAtom); // all news articles that were fetched on initial page load
+  const [allAssets, setAllAssets] = useRecoilState(allAssetsAtom); // all data for each asset featured
 
   useEffect(() => {
     setCurrWeeklyBtc(weeklyBtc);
@@ -68,6 +69,7 @@ const Home: NextPage = ({ newsData, weeklyBtc, allAssetsData }: any) => {
 }
 
 export async function getServerSideProps() {
+  // fetch all data for these assets just for home page
   const tickers = [
     "BTC",
     "ETH",

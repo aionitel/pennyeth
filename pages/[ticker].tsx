@@ -10,7 +10,7 @@ interface AssetPageProps {
   asset: Asset;
 }
 
-// main asset page
+// main asset page, e.g. "/btc"
 
 const AssetPage: NextPage<AssetPageProps> = ({ asset }) => {
   const [textOpen, setTextOpen] = useState<boolean>(false); // keeping track if user enlarged text passage or not

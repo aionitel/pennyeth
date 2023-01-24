@@ -7,6 +7,7 @@ import NextNProgress from "nextjs-progressbar";
 
 const App = ({ Component, pageProps }: AppProps) => {
 
+  // make entire web page background color black
   if (typeof window !== 'undefined') {
     document.body.style.background = 'black';
   }
