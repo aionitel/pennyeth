@@ -2,19 +2,9 @@ import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
 import { NewsArticle } from "../data/utils/types";
 
-const { persistAtom } = recoilPersist();
+// declaration for all global state needed
 
-interface AssetProps {
-  name: string,
-  ticker: string,
-  image: string,
-  price: number,
-  dailyChange: number,
-  volume: number,
-  marketCap: number,
-  marketDominance: number,
-  supply: number,
-}
+const { persistAtom } = recoilPersist();
 
 // curr user's eth address
 export const userAtom = atom({

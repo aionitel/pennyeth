@@ -5,6 +5,8 @@ import AssetCard from '../../components/asset/AssetCard'
 import Search from '../../components/search/Search'
 import fetchAllAssets from '../../data/prices/metric/fetchAllAssets'
 
+// main assets page, display search and list some cool coins
+
 const Assets: NextPage = ({ allAssets }: any) => {
   return (
     <div>
@@ -49,6 +51,7 @@ const Assets: NextPage = ({ allAssets }: any) => {
 }
 
 export async function getServerSideProps() {
+  // fetch all data for coins needed on page load
   const fetchData = async () => {
     const tickers = [
       "BTC",
