@@ -39,8 +39,6 @@ const fetchAllAssets = async (tickers: string[]) => {
     return asset;
   }))
 
-  console.log(assetDatas)
-
   return assetDatas;
 }
 

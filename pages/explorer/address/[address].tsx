@@ -13,7 +13,6 @@ interface AddressPageProps {
 }
 
 const Address: NextPage<AddressPageProps> = ({ address }) => {
-  console.log(address)
   return (
     <div>
       <Head>
