@@ -16,8 +16,7 @@ export const images = [
 
 export const logos = {
   "BTC": 'https://i.imgur.com/wbZ6UVD.png', // bitcoin
-  "BSV": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.us-east-2.amazonaws.com%2Fnomics-api%2Fstatic%2Fimages%2Fcurrencies%2FBSV.png&f=1&nofb=1&ipt=b67ad18c2a23606e1512898e0c401ea6113a6977edd33ff0388cdddba2d27e23&ipo=images", // bitcoin-sv
-  "ETH": 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Fethereum-png-12.png&f=1&nofb=1', // ethereum
+  "BSV": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcryptologos.cc%2Flogos%2Fbitcoin-sv-bsv-logo.png&f=1&nofb=1&ipt=e39e7ace39de4ea9ff04c619569fac0421cfd68eff6a92493cfee3df9955cea1&ipo=images",
   "XMR": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-download.com%2Fwp-content%2Fuploads%2F2018%2F05%2FMonero_logo_colour.png&f=1&nofb=1&ipt=11df0767e531bdb4d620d88dd7f3fdc7b2337e550cf3cf3231bcba2f878de70a&ipo=images",
   "SOL": 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyourcryptolibrary.com%2Fwp-content%2Fuploads%2F2021%2F05%2Fsolana-sol-logo.png&f=1&nofb=1', // solana
   "ADA": 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ficons-for-free.com%2Ficonfiles%2Fpng%2F512%2Fcardano%2Bicon-1320162855683510157.png&f=1&nofb=1', // cardano

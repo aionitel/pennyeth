@@ -8,17 +8,19 @@ const NewsCard: React.FC<NewsArticle> = ({ title, image, date, url }) => {
   const [hover, setHover] = useState<boolean>(false);
   const [cover, setCover] = useState<string>("");
 
-  if (typeof(window) !== 'undefined') {window.onload = function() {
-    setCover(images[Math.floor(Math.random() * images.length)]);
-  }}
+  if (typeof (window) !== 'undefined') {
+    window.onload = function () {
+      setCover(images[Math.floor(Math.random() * images.length)]);
+    }
+  }
 
   return (
     <a href={url} target='_blank' rel="noopener noreferrer" onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>
       <div className='flex-row hover:cursor-pointer hover:underline'>
         <div className='overflow-hidden flex justify-center'>
-          <img 
-            src={image} 
-            alt='' 
+          <img
+            src={image}
+            alt=''
             className='mb-2 transition-all duration-1000 rounded-xl hover:rounded-none'
             style={{
               scale: hover ? 1.25 : 1,
